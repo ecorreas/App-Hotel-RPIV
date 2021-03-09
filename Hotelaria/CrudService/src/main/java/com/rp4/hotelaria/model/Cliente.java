@@ -1,7 +1,9 @@
 package com.rp4.hotelaria.model;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 
+@Entity
 public class Cliente extends Usuario {
 
     @Column(name = "cpf")
