@@ -4,113 +4,111 @@ import javax.persistence.*;
 
 @Entity
 
-
 public class Hotel {
 
+	@Id
+	@Column(name = "id_hotel")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long idHotel;
 
+	@Column(name = "numero_quarto")
+	private Long numeroQuarto;
 
-    @Id
-    @Column(name = "id_hotel")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idHotel;
+	@Column(name = "cod_endereco")
+	private String codEndereco;
 
-    @Column(name = "numero_quarto")
-    private Long numeroQuarto;
+	@Column(name = "cidade")
+	private String cidade;
 
-    @Column(name = "cod_endereco")
-    private String codEndereco;
+	@Column(name = "descricao")
+	private String descricao;
 
-    @Column(name = "cidade")
-    private String cidade;
+	@Column(name = "endereco")
+	private String endereco;
 
-    @Column(name = "descricao")
-    private String descricao;
+	@Column(name = "status")
+	private String status;
 
-    @Column(name = "endereco")
-    private String endereco;
+	@Column(name = "preco")
+	private double preco;
 
-    @Column(name = "status")
-    private String status;
+	public Hotel() {
 
-    @Column(name = "preco")
-    private double preco;
+	}
 
-    public Hotel (){
+	public Hotel(Long idHotel, Long numeroQuarto, String codEndereco, String cidade, String descricao, String endereco,
+			String status, double preco) {
+		this.idHotel = idHotel;
+		this.numeroQuarto = numeroQuarto;
+		this.codEndereco = codEndereco;
+		this.cidade = cidade;
+		this.descricao = descricao;
+		this.endereco = endereco;
+		this.status = status;
+		this.preco = preco;
+	}
 
-    }
+	public Long getIdHotel() {
+		return idHotel;
+	}
 
-    public Hotel(Long idHotel, Long numeroQuarto, String codEndereco, String cidade, String descricao, String endereco, String status, double preco) {
-        this.idHotel = idHotel;
-        this.numeroQuarto = numeroQuarto;
-        this.codEndereco = codEndereco;
-        this.cidade = cidade;
-        this.descricao = descricao;
-        this.endereco = endereco;
-        this.status = status;
-        this.preco = preco;
-    }
+	public void setIdHotel(Long idHotel) {
+		this.idHotel = idHotel;
+	}
 
-    public Long getIdHotel() {
-        return idHotel;
-    }
+	public Long getNumeroQuarto() {
+		return numeroQuarto;
+	}
 
-    public void setIdHotel(Long idHotel) {
-        this.idHotel = idHotel;
-    }
+	public void setNumeroQuarto(Long numeroQuarto) {
+		this.numeroQuarto = numeroQuarto;
+	}
 
-    public Long getNumeroQuarto() {
-        return numeroQuarto;
-    }
+	public String getCodEndereco() {
+		return codEndereco;
+	}
 
-    public void setNumeroQuarto(Long numeroQuarto) {
-        this.numeroQuarto = numeroQuarto;
-    }
+	public void setCodEndereco(String codEndereco) {
+		this.codEndereco = codEndereco;
+	}
 
-    public String getCodEndereco() {
-        return codEndereco;
-    }
+	public String getCidade() {
+		return cidade;
+	}
 
-    public void setCodEndereco(String codEndereco) {
-        this.codEndereco = codEndereco;
-    }
+	public void setCidade(String cidade) {
+		this.cidade = cidade;
+	}
 
-    public String getCidade() {
-        return cidade;
-    }
+	public String getDescricao() {
+		return descricao;
+	}
 
-    public void setCidade(String cidade) {
-        this.cidade = cidade;
-    }
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
 
-    public String getDescricao() {
-        return descricao;
-    }
+	public String getEndereco() {
+		return endereco;
+	}
 
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
-    }
+	public void setEndereco(String endereco) {
+		this.endereco = endereco;
+	}
 
-    public String getEndereco() {
-        return endereco;
-    }
+	public String getStatus() {
+		return status;
+	}
 
-    public void setEndereco(String endereco) {
-        this.endereco = endereco;
-    }
+	public void setStatus(String status) {
+		this.status = status;
+	}
 
-    public String getStatus() {
-        return status;
-    }
+	public double getPreco() {
+		return preco;
+	}
 
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    public double getPreco() {
-        return preco;
-    }
-
-    public void setPreco(double preco) {
-        this.preco = preco;
-    }
+	public void setPreco(double preco) {
+		this.preco = preco;
+	}
 }
