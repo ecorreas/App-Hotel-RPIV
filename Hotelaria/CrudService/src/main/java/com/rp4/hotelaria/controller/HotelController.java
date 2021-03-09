@@ -20,13 +20,13 @@ public class HotelController {
     @PostMapping("/hotel")
     public void saveHotel(@RequestBody HotelDTO hotelDTO){
         Hotel hotel = new Hotel();
-        hotel.setIdHotel(hotelDTO.getIdHotel());
         hotel.setCidade(hotelDTO.getCidade());
         hotel.setDescricao(hotelDTO.getDescricao());
         hotel.setNumeroQuarto(hotelDTO.getNumeroQuarto());
         hotel.setEndereco(hotelDTO.getEndereco());
         hotel.setPreco(hotelDTO.getPreco());
         hotel.setStatus(hotelDTO.getStatus());
+        hotelService.salvarHotel(hotel);
 
     }
 }
