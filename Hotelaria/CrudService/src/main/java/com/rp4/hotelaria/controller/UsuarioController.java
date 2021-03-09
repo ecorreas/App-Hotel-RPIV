@@ -1,41 +1,42 @@
-//package com.rp4.hotelaria.controller;
-//
-//import com.rp4.hotelaria.dto.UsuarioDTO;
-//import com.rp4.hotelaria.interfaces.IUsuarioService;
-//import com.rp4.hotelaria.model.Cliente;
-//import com.rp4.hotelaria.model.Funcionario;
-//import com.rp4.hotelaria.model.Usuario;
-//import org.springframework.web.bind.annotation.*;
-//
-//import java.util.List;
-//
-//@RestController
-//@RequestMapping("/api/user")
-//public class UsuarioController {
-//
-//
-//    private IUsuarioService usuarioService;
-//    public UsuarioController(IUsuarioService usuarioServ){
-//        this.usuarioService = usuarioServ;
-//
-//    }
+package com.rp4.hotelaria.controller;
+
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.rp4.hotelaria.dto.UsuarioDTO;
+import com.rp4.hotelaria.interfaces.IUsuarioService;
+import com.rp4.hotelaria.model.Funcionario;
+
+@RestController
+@RequestMapping("/api/user")
+public class UsuarioController {
+
+
+    private IUsuarioService usuarioService;
+    public UsuarioController(IUsuarioService usuarioServ){
+        this.usuarioService = usuarioServ;
+
+    }
 //    @GetMapping("/todos")
 //    public List<Usuario> pegarTodosUsuarios(){
 //        List<Usuario> usuarios = usuarioService.pegarTodosUsuarios();
 //        return usuarios;
 //    }
-//
-//    @PostMapping("/funcionario/adicionar")
-//    public void salvarFuncionario(@RequestBody UsuarioDTO usuarioDTO){
-//        Funcionario funcionario = new Funcionario();
-//        funcionario.setId(usuarioDTO.getId());
-//        funcionario.setEmail(usuarioDTO.getEmail());
-//        funcionario.setNome(usuarioDTO.getNome());
-//        funcionario.setCargo(usuarioDTO.getCargo());
-//        funcionario.setCpf(usuarioDTO.getCpf());
-//        funcionario.setTelefone(usuarioDTO.getTelefone());
-//        funcionario.setSenha(usuarioDTO.getSenha());
-//    }
+
+    @PostMapping("/funcionario/adicionar")
+    public void salvarFuncionario(@RequestBody UsuarioDTO usuarioDTO){
+        Funcionario funcionario = new Funcionario();
+        funcionario.setId(usuarioDTO.getId());
+        funcionario.setEmail(usuarioDTO.getEmail());
+        funcionario.setNome(usuarioDTO.getNome());
+        funcionario.setCargo(usuarioDTO.getCargo());
+        funcionario.setCpf(usuarioDTO.getCpf());
+        funcionario.setTelefone(usuarioDTO.getTelefone());
+        funcionario.setSenha(usuarioDTO.getSenha());
+        usuarioService.salvarUsuario(funcionario);
+    }
 //    @PostMapping
 //    public void salvarCliente(@RequestBody UsuarioDTO usuarioDTO){
 //        Cliente cliente = new Cliente();
@@ -79,5 +80,5 @@
 //    public void deleteUser(@PathVariable("id") Long id){
 //        usuarioService.excluirUsuario(id);
 //    }
-//
-//}
+
+}
