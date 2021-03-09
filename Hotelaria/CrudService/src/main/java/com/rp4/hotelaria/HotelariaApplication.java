@@ -12,5 +12,4 @@ public class HotelariaApplication {
 
 		SpringApplication.run(HotelariaApplication.class, args);
 	}
-
 }
