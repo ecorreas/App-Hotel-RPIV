@@ -3,18 +3,15 @@ package com.rp4.hotelaria.model;
 import javax.persistence.*;
 
 @Entity
-
+@Table(name = "tbl_registro_hotel")
 public class Hotel {
 
 	@Id
-	@Column(name = "id_hotel")
+	@Column(name = "idHotel")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idHotel;
 
-	@Column(name = "numero_quarto")
-	private Long numeroQuarto;
-
-	@Column(name = "cod_endereco")
+	@Column(name = "codEndereco")
 	private String codEndereco;
 
 	@Column(name = "cidade")
@@ -26,26 +23,17 @@ public class Hotel {
 	@Column(name = "endereco")
 	private String endereco;
 
-	@Column(name = "status")
-	private String status;
-
-	@Column(name = "preco")
-	private double preco;
 
 	public Hotel() {
 
 	}
 
-	public Hotel(Long idHotel, Long numeroQuarto, String codEndereco, String cidade, String descricao, String endereco,
-			String status, double preco) {
+	public Hotel(Long idHotel, String codEndereco, String cidade, String descricao, String endereco) {
 		this.idHotel = idHotel;
-		this.numeroQuarto = numeroQuarto;
 		this.codEndereco = codEndereco;
 		this.cidade = cidade;
 		this.descricao = descricao;
 		this.endereco = endereco;
-		this.status = status;
-		this.preco = preco;
 	}
 
 	public Long getIdHotel() {
@@ -54,14 +42,6 @@ public class Hotel {
 
 	public void setIdHotel(Long idHotel) {
 		this.idHotel = idHotel;
-	}
-
-	public Long getNumeroQuarto() {
-		return numeroQuarto;
-	}
-
-	public void setNumeroQuarto(Long numeroQuarto) {
-		this.numeroQuarto = numeroQuarto;
 	}
 
 	public String getCodEndereco() {
@@ -94,21 +74,5 @@ public class Hotel {
 
 	public void setEndereco(String endereco) {
 		this.endereco = endereco;
-	}
-
-	public String getStatus() {
-		return status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-	}
-
-	public double getPreco() {
-		return preco;
-	}
-
-	public void setPreco(double preco) {
-		this.preco = preco;
 	}
 }
