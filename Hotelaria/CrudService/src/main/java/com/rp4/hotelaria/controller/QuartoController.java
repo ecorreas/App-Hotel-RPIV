@@ -6,6 +6,7 @@ import com.rp4.hotelaria.interfaces.IQuartoService;
 import com.rp4.hotelaria.model.Quarto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -21,8 +22,7 @@ public class QuartoController {
     }
 
     @PostMapping("/salvar")
-    public void saveQuarto(QuartoDTO quartoDTO){
-
+    public void saveQuarto(@RequestBody QuartoDTO quartoDTO){
         Quarto quarto = new Quarto();
         quarto.setHotel(quartoDTO.getHotel());
         quarto.setNumeroDoQuarto(quartoDTO.getNumeroDoQuarto());

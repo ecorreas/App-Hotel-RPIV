@@ -9,7 +9,7 @@ public class Quarto {
     @Id
     @Column(name = "id_quarto")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long idQuarto;
 
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -34,8 +34,8 @@ public class Quarto {
     public Quarto() {
     }
 
-    public Quarto(Long id, Hotel hotel, int numeroDoQuarto, double preco, String descricao, String adicionalDoQuarto) {
-        this.id = id;
+    public Quarto(Long idQuarto, Hotel hotel, int numeroDoQuarto, double preco, String descricao, String adicionalDoQuarto) {
+        this.idQuarto = idQuarto;
         this.hotel = hotel;
         this.numeroDoQuarto = numeroDoQuarto;
         this.preco = preco;
@@ -43,12 +43,12 @@ public class Quarto {
         this.adicionalDoQuarto = adicionalDoQuarto;
     }
 
-    public Long getId() {
-        return id;
+    public Long getIdQuarto() {
+        return idQuarto;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setIdQuarto(Long idQuarto) {
+        this.idQuarto = idQuarto;
     }
 
     public Hotel getHotel() {

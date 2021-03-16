@@ -26,10 +26,9 @@ public class HotelController {
         Hotel hotel = new Hotel();
         hotel.setCidade(hotelDTO.getCidade());
         hotel.setDescricao(hotelDTO.getDescricao());
-        hotel.setNumeroQuarto(hotelDTO.getNumeroQuarto());
+
         hotel.setEndereco(hotelDTO.getEndereco());
-        hotel.setPreco(hotelDTO.getPreco());
-        hotel.setStatus(hotelDTO.getStatus());
+
         hotelService.salvarHotel(hotel);
     }
 

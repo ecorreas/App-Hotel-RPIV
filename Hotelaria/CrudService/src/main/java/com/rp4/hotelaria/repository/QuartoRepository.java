@@ -5,6 +5,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface QuartoRepository extends JpaRepository<Quarto, Long> {
 
-    Quarto findQuartoById(Long id);
+    Quarto findQuartoByIdQuarto(Long id);
     Quarto findQuartoByNumeroDoQuarto(int numero);
 }
