@@ -17,9 +17,9 @@ public interface IQuartoService {
     //public Quarto getQuartoByStatus(Status status);
 
     public Quarto atualizarQuarto(Quarto quarto);
-//
-//    public void excluirQuarto(Long id);
-//
-//    public List<Quarto> pegarTodosQuartos();
+
+    public void excluirQuarto(Long id);
+
+    public List<Quarto> pegarTodosQuartos();
 
 }

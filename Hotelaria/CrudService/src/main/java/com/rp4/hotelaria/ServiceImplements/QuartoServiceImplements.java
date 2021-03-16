@@ -38,14 +38,14 @@ public class QuartoServiceImplements implements IQuartoService {
     public Quarto atualizarQuarto(Quarto quarto) {
         return quartoRepository.save(quarto);
     }
-//
-//    @Override
-//    public void excluirQuarto(Long id) {
-//
-//    }
-//
-//    @Override
-//    public List<Quarto> pegarTodosQuartos() {
-//        return null;
-//    }
+
+    @Override
+    public void excluirQuarto(Long id) {
+        quartoRepository.deleteById(id);
+    }
+
+    @Override
+    public List<Quarto> pegarTodosQuartos() {
+        return quartoRepository.findAll();
+    }
 }
