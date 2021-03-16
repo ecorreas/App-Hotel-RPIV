@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(Login());
+void main() => runApp(TelaReservas());
 
-class Login extends StatelessWidget {
+class TelaReservas extends StatelessWidget {
   // This widget is the root of your application.
+  String dataIn = '';
+  String dataOut = '';
+  
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -14,30 +17,54 @@ class Login extends StatelessWidget {
       ),
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Login Hotelaria'),
+          title: Text('Buscar Hotéis'),
         ),
         body: Column(
           children: <Widget>[
             Image.asset('assets/imagens/login.jpg'),  
             Padding(
-              padding: const EdgeInsets.only(top: 60.0),
+              padding: const EdgeInsets.only(top: 29.0),
             ),
-            Text('E-mail:'),
-            TextField(),
-            Padding(
-              padding: const EdgeInsets.only(top: 50.0),
+            Text('Data de check-in:'),
+            TextField(
+              keyboardType: TextInputType.datetime,
+              decoration: InputDecoration(
+                labelText: 'DD/MM/AAAA',
+                border: OutlineInputBorder(),
+
+                ),
             ),
-            Text('Senha:'),
-            TextField(),
             Padding(
-              padding: const EdgeInsets.only(top: 50.0),
+              padding: const EdgeInsets.only(top: 29.0),
+            ),
+            Text('Data de check-out:'),
+            TextField(
+              keyboardType: TextInputType.datetime,
+              decoration: InputDecoration(
+                labelText: 'DD/MM/AAAA',
+                border: OutlineInputBorder(),
+
+                ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 29.0),
+            ),
+            Text('Cidade:'),
+            TextField(
+              decoration: InputDecoration(
+                labelText: 'Cidade de destino',
+                border: OutlineInputBorder(),
+
+                ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 29.0),
             ),
             RaisedButton(
               child: Text('Logar'),
               onPressed: (){
-                Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => TelaReservas()),
+                Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => TelaHoteis()),
             );
               },
               color: Colors.green,
@@ -50,47 +77,18 @@ class Login extends StatelessWidget {
   }
 }
 
-
-class TelaReservas extends StatelessWidget {
-  // This widget is the root of your application.
+class TelaHoteis extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Tela de reserva',
+      title: 'Login',
       theme: ThemeData(
         primarySwatch: Colors.brown,
         visualDensity: VisualDensity.adaptivePlatformDensity, 
       ),
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Hotelaria'),
-        ),
-        body: Column(
-          children: <Widget>[
-            Image.asset('assets/imagens/hotelreserva1.jpg'),  
-            Padding(
-              padding: const EdgeInsets.only(top: 60.0),
-            ),
-            Text('Data da viagem:'),
-            TextField(),
-            Padding(
-              padding: const EdgeInsets.only(top: 50.0),
-            ),
-            Text('Local da viagem:'),
-            TextField(),
-            Padding(
-              padding: const EdgeInsets.only(top: 50.0),
-            ),
-            RaisedButton(
-              child: Text('Buscar'),
-              onPressed: (){
-                 Navigator.pop(context);
-
-              },
-              color: Colors.green,
-              textColor: Colors.white,
-            )
-          ],
+          title: Text('Login Hotelaria'),
         ),
       ),
     );
