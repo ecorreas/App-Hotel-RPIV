@@ -1,6 +1,8 @@
 
 import 'package:flutter/material.dart';
 
+import 'hoteis_disponiveis.dart';
+
 class TelaReservas extends StatefulWidget {
   // This widget is the root of your application.
   @override
@@ -58,9 +60,9 @@ class DadosReserva extends State<TelaReservas> {
               RaisedButton(
                 child: Text('Buscar'),
                 onPressed: (){
-                  // Navigator.of(context).push(
-                  //     MaterialPageRoute(builder: (context) => ()),
-                  // );
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => Hoteis_Disponiveis()),
+                  );
                 },
                 color: Colors.green,
                 textColor: Colors.white,
