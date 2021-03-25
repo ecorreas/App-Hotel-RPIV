@@ -10,8 +10,6 @@ public class ManutencaoDTO {
 
     private Long id_Manu;
     private Data data;
-
-    @Enumerated(EnumType.STRING)
     private Status status;
 
 
@@ -19,9 +17,10 @@ public class ManutencaoDTO {
 
     }
 
-    public ManutencaoDTO(Long id_Manu, Data data){
+    public ManutencaoDTO(Long id_Manu, Data data, Status status){
         this.id_Manu = id_Manu;
         this.data = data;
+        this.status = status;
     }
 
     public Long getId_Manu() {
@@ -40,4 +39,11 @@ public class ManutencaoDTO {
         this.data = data;
     }
 
+    public Status getStatus() {
+        return status;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
+    }
 }
