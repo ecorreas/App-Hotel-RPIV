@@ -3,7 +3,6 @@ package com.rp4.hotelaria.controller;
 import com.rp4.hotelaria.dto.QuartoDTO;
 
 import com.rp4.hotelaria.interfaces.IQuartoService;
-import com.rp4.hotelaria.model.Hotel;
 import com.rp4.hotelaria.model.Quarto;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
