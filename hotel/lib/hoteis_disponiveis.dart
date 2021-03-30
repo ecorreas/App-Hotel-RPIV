@@ -46,7 +46,9 @@ class _Hoteis_DisponiveisState extends State<Hoteis_Disponiveis> {
                                 Text('X quartos disponiveis'),
                                 RaisedButton(
                                   child: Text('Reservar'),
-                                  onPressed: (){},
+                                  onPressed: (){
+                                    Navigator.of(context).pushNamed('/quartos');
+                                  },
                                   color: Colors.green,
                                   textColor: Colors.white,
                                 ),
