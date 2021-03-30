@@ -7,7 +7,7 @@ import javax.persistence.*;
 public class FolhaPagamento {
 
     @Id
-    @Column(name = "id")
+    @Column(name = "idFP")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
