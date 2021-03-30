@@ -1,7 +1,10 @@
 package com.rp4.hotelaria.controller;
 
 import com.rp4.hotelaria.Enuns.Status;
+import com.rp4.hotelaria.dto.HotelDTO;
+import com.rp4.hotelaria.dto.ManutencaoDTO;
 import com.rp4.hotelaria.interfaces.IManutencaoService;
+import com.rp4.hotelaria.model.Hotel;
 import com.rp4.hotelaria.model.Manutencao;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.http.HttpStatus;
@@ -20,6 +23,18 @@ public class ManutencaoController {
     public ManutencaoController(IManutencaoService service){
         this.manutencaoService = service;
     }
+
+    @PostMapping("/salvar")
+    @ApiOperation(value = "Salvar manutenção")
+    public void AddManutencao(@RequestBody ManutencaoDTO manutencaoDTO){
+        Manutencao manutencao = new Manutencao();
+        manutencao.setData(manutencaoDTO.getData());
+        manutencao.setQuarto(manutencaoDTO.getQuarto());
+        manutencao.setValorConserto(manutencaoDTO.getValorConserto());
+        manutencao.setConsertos(manutencaoDTO.getConsertos());
+        manutencaoService.AddManutencao(manutencao);
+    }
+
 
     @GetMapping("/hotel/{status}")
     @ApiOperation(value = "Retornar Manutencao")

@@ -7,6 +7,8 @@ import java.util.List;
 
 public interface IManutencaoService {
 
+    public void AddManutencao(Manutencao manutencao);
+
     public Manutencao getManutencaoByStatus(Status status);
 
     public Manutencao atualizarManutencao(Manutencao manutencao);
