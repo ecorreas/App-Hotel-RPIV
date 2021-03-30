@@ -1,5 +1,6 @@
 package com.rp4.hotelaria.ServiceImplements;
 
+import com.rp4.hotelaria.ProducerMensagem.QuartoProducerMensagem;
 import com.rp4.hotelaria.interfaces.IQuartoService;
 import com.rp4.hotelaria.model.Quarto;
 import com.rp4.hotelaria.repository.QuartoRepository;
@@ -13,15 +14,20 @@ import java.util.List;
 public class QuartoServiceImplements implements IQuartoService {
 
     private QuartoRepository quartoRepository;
+    private QuartoProducerMensagem quartoProducerMensagem;
+
     @Autowired
-    public QuartoServiceImplements(QuartoRepository quartoR){
+    public QuartoServiceImplements(QuartoRepository quartoR, QuartoProducerMensagem quartoPM) {
         this.quartoRepository = quartoR;
+        this.quartoProducerMensagem= quartoPM;
     }
 
     @Override
     @Transactional
     public void salvarQuarto(Quarto quarto) {
-        quartoRepository.save(quarto);
+        Quarto quartoS = quartoRepository.save(quarto);
+        this.quartoProducerMensagem = quartoProducerMensagem;
+
     }
 
     @Override

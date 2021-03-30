@@ -16,7 +16,7 @@ public class HotelServiceImplements implements IHotelService {
     private HotelRepository hotelRepository;
 
     @Autowired
-    public HotelServiceImplements(HotelRepository hotelR){
+    public HotelServiceImplements(HotelRepository hotelR) {
         this.hotelRepository = hotelR;
 
     }
@@ -27,26 +27,26 @@ public class HotelServiceImplements implements IHotelService {
         hotelRepository.save(hotel);
     }
 
-	@Override
-	public Hotel getHotelById(Long id) {
-		return hotelRepository.findHotelByIdHotel(id);
-		
-	}
+    @Override
+    public Hotel getHotelById(Long id) {
+        return hotelRepository.findHotelByIdHotel(id);
 
-	@Override
-	public Hotel atualizarHotel(Hotel hotel) {
-		return hotelRepository.save(hotel);
-	}
+    }
 
-	@Override
-	public void excluirHotel(Long id) {
-		hotelRepository.deleteById(id);
-	}
+    @Override
+    public Hotel atualizarHotel(Hotel hotel) {
+        return hotelRepository.save(hotel);
+    }
 
-	@Override
-	public List<Hotel> pegarTodosHoteis() {
-		return hotelRepository.findAll();
-	}
-	
-	
+    @Override
+    public void excluirHotel(Long id) {
+        hotelRepository.deleteById(id);
+    }
+
+    @Override
+    public List<Hotel> pegarTodosHoteis() {
+        return hotelRepository.findAll();
+    }
+
+
 }
