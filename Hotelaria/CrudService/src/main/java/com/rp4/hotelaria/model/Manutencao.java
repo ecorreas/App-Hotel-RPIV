@@ -16,6 +16,16 @@ public class Manutencao {
     @Column(name = "data")
     private String data;
 
+
+
+    public Manutencao(){
+
+    }
+
+    public Manutencao(Long id_manutencao, String data ){
+
+    }
+
     public Long getId_manutencao() {
         return id_manutencao;
     }

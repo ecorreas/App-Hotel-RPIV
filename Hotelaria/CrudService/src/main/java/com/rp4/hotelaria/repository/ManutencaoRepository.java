@@ -1,10 +1,10 @@
 package com.rp4.hotelaria.repository;
 
-import com.rp4.hotelaria.model.Hotel;
+import com.rp4.hotelaria.Enuns.Status;
 import com.rp4.hotelaria.model.Manutencao;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface ManutencaoRepository extends JpaRepository<Manutencao, Long> {
+public interface ManutencaoRepository extends JpaRepository<Manutencao, Status> {
 
-    Manutencao findManutencaoById_manutencao(Long id);
+    Manutencao findManutencaoByid_manutencao(Status status);
 }

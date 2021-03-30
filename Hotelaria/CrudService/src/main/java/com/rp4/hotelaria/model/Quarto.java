@@ -1,5 +1,7 @@
 package com.rp4.hotelaria.model;
 
+import com.rp4.hotelaria.Enuns.Status;
+
 import javax.persistence.*;
 
 @Entity
@@ -28,19 +30,21 @@ public class Quarto {
     @Column(name = "adicionalDoQuarto")
     private String adicionalDoQuarto;
 
-    //@Column(name = "statusDoQuarto")
-    //private Status statusDoQuarto;
+    @Enumerated(EnumType.STRING)
+    private Status status;
+
 
     public Quarto() {
     }
 
-    public Quarto(Long idQuarto, Hotel hotel, int numeroDoQuarto, double preco, String descricao, String adicionalDoQuarto) {
+    public Quarto(Long idQuarto, Hotel hotel, int numeroDoQuarto, double preco, String descricao, String adicionalDoQuarto, Status status) {
         this.idQuarto = idQuarto;
         this.hotel = hotel;
         this.numeroDoQuarto = numeroDoQuarto;
         this.preco = preco;
         this.descricao = descricao;
         this.adicionalDoQuarto = adicionalDoQuarto;
+        this.status = status;
     }
 
     public Long getIdQuarto() {
@@ -89,5 +93,13 @@ public class Quarto {
 
     public void setAdicionalDoQuarto(String adicionalDoQuarto) {
         this.adicionalDoQuarto = adicionalDoQuarto;
+    }
+
+    public Status getStatus() {
+        return status;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
     }
 }

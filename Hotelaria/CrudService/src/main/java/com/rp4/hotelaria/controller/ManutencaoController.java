@@ -1,10 +1,7 @@
 package com.rp4.hotelaria.controller;
 
-import com.rp4.hotelaria.dto.HotelDTO;
-import com.rp4.hotelaria.dto.ManutencaoDTO;
-import com.rp4.hotelaria.interfaces.IHotelService;
+import com.rp4.hotelaria.Enuns.Status;
 import com.rp4.hotelaria.interfaces.IManutencaoService;
-import com.rp4.hotelaria.model.Hotel;
 import com.rp4.hotelaria.model.Manutencao;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.http.HttpStatus;
@@ -24,21 +21,26 @@ public class ManutencaoController {
         this.manutencaoService = service;
     }
 
-    @PostMapping("/salvar")
-    @ApiOperation(value = "Salvar manutancao")
-    public void saveManutencao(@RequestBody ManutencaoDTO manutencaoDTO){
-        Manutencao manutencao = new Manutencao();
-        manutencao.setId_manutencao(manutencaoDTO.getId_Manu());
-        manutencao.setId_manutencao(manutencaoDTO.getId_Manu();
-        manutencaoService.salvarManutencao(manutencao);
-    }
-
-    @GetMapping("/hotel/{id}")
+    @GetMapping("/hotel/{status}")
     @ApiOperation(value = "Retornar Manutencao")
-    public ResponseEntity<?> pegarManutencaoPeloId(@PathVariable("id")Long id){
-        Manutencao manutencao = manutencaoService.getManutencaoById(id);
+    public ResponseEntity<?> getManutencaoByStatus(@PathVariable("status") Status status){
+        Manutencao manutencao = manutencaoService.getManutencaoByStatus(status);
         return new ResponseEntity<> (manutencao, HttpStatus.OK);
     }
+
+    @PutMapping("/hotel/atualizar")
+    @ApiOperation(value = "Atualizar Manutenção")
+    public Manutencao atualizarManutencao(@RequestBody Manutencao manutencao) {
+        return manutencaoService.atualizarManutencao(manutencao);
+    }
+
+    @GetMapping("/todos")
+    @ApiOperation(value = "Retornar uma lista de manutenções")
+    public List<Manutencao> pegarTodasManutencoes(){
+        List<Manutencao> manutencoes = manutencaoService.pegarTodasManutencoes();
+        return manutencoes;
+    }
+
 
 }
 

@@ -1,5 +1,6 @@
 package com.rp4.hotelaria.dto;
 
+import com.rp4.hotelaria.Enuns.Status;
 import com.rp4.hotelaria.model.Hotel;
 
 public class QuartoDTO {
@@ -10,19 +11,20 @@ public class QuartoDTO {
     private double preco;
     private String descricao;
     private String adicionalDoQuarto;
+    private Status status;
 
-    //private Status statusDoQuarto
     public QuartoDTO() {
 
     }
 
-    public QuartoDTO(Long idQuarto, int numeroDoQuarto,Hotel hotel, double preco, String descricao, String adicionalDoQuarto) {
+    public QuartoDTO(Long idQuarto, int numeroDoQuarto,Hotel hotel, double preco, String descricao, String adicionalDoQuarto, Status status) {
         this.idQuarto = idQuarto;
         this.numeroDoQuarto = numeroDoQuarto;
         this.hotel = hotel;
         this.preco = preco;
         this.descricao = descricao;
         this.adicionalDoQuarto = adicionalDoQuarto;
+        this.status = status;
     }
 
     public Long getIdQuarto() {
@@ -72,4 +74,8 @@ public class QuartoDTO {
     public void setAdicionalDoQuarto(String adicionalDoQuarto) {
         this.adicionalDoQuarto = adicionalDoQuarto;
     }
+
+    public Status getStatus() { return status; }
+
+    public void setStatus(Status status) { this.status = status; }
 }

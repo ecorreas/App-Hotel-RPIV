@@ -8,7 +8,7 @@ import javax.xml.crypto.Data;
 
 public class ManutencaoDTO {
 
-    private Long id_Manu;
+    private Long id_manutencao;
     private Data data;
     private Status status;
 
@@ -17,18 +17,18 @@ public class ManutencaoDTO {
 
     }
 
-    public ManutencaoDTO(Long id_Manu, Data data, Status status){
-        this.id_Manu = id_Manu;
+    public ManutencaoDTO(Long id_manutencao, Data data, Status status){
+        this.id_manutencao = id_manutencao;
         this.data = data;
         this.status = status;
     }
 
     public Long getId_Manu() {
-        return id_Manu;
+        return id_manutencao;
     }
 
-    public void setId_Manu(Long id_Manu) {
-        this.id_Manu = id_Manu;
+    public void setId_Manu(Long id_manutencao) {
+        this.id_manutencao = id_manutencao;
     }
 
     public Data getData() {
