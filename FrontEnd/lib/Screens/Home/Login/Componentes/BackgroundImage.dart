@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 
 class BackgroundImage extends StatelessWidget {
+  final Widget child;
+
   const BackgroundImage({
     Key key,
+    this.child,
   }) : super(key: key);
 
   @override
@@ -14,10 +17,12 @@ class BackgroundImage extends StatelessWidget {
           end: Alignment.bottomCenter,
           colors: [
             Colors.blue[800],
-            Colors.black12,
+            Colors.blue[900],
+            Colors.blueGrey,
           ],
         ),
       ),
+      child: child,
     );
   }
 }
