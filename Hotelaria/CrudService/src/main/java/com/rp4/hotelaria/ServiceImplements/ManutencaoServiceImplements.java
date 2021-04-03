@@ -30,7 +30,7 @@ public class ManutencaoServiceImplements implements IManutencaoService {
 
     @Override
     public Manutencao getManutencaoByStatus(Status status) {
-        return manutencaoRepository.findManutencaoByid_manutencao(status);
+        return manutencaoRepository.findByidManutencao(status);
     }
 
     @Override

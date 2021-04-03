@@ -11,7 +11,7 @@ public class Manutencao {
     @Id
     @Column(name = "id_manutencao")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id_manutencao;
+    private Long idManutencao;
 
     @Column(name = "data")
     private String data;
@@ -30,8 +30,8 @@ public class Manutencao {
 
     }
 
-    public Manutencao(Long id_manutencao, String data, Quarto quarto, String consertos, double valorConserto){
-        this.id_manutencao = id_manutencao;
+    public Manutencao(Long idManutencao, String data, Quarto quarto, String consertos, double valorConserto){
+        this.idManutencao = idManutencao;
         this.data = data;
         this.valorConserto = valorConserto;
         this.consertos = consertos;
@@ -40,12 +40,12 @@ public class Manutencao {
 
     }
 
-    public Long getId_manutencao() {
-        return id_manutencao;
+    public Long getIdManutencao() {
+        return idManutencao;
     }
 
-    public void setId_manutencao(Long id_manutencao) {
-        this.id_manutencao = id_manutencao;
+    public void setIdManutencao(Long idManutencao) {
+        this.idManutencao = idManutencao;
     }
 
     public String getData() {

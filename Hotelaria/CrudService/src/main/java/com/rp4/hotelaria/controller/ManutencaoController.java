@@ -15,7 +15,7 @@ import java.util.List;
 
 
 @RestController
-@RequestMapping("/api/hoteis")
+@RequestMapping("/api/manutencao")
 
 public class ManutencaoController {
     private IManutencaoService manutencaoService;

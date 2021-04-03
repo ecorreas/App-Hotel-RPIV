@@ -23,3 +23,8 @@ zuul:
       strip-prefix: false
       custom-sensitive-headers: true
 
+    Pagamento:
+      path: /Pagamento/**
+      service-id: pagamento
+      strip-prefix: false
+      custom-sensitive-headers: true

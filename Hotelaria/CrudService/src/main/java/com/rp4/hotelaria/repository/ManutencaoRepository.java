@@ -6,5 +6,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface ManutencaoRepository extends JpaRepository<Manutencao, Status> {
 
-    Manutencao findManutencaoByid_manutencao(Status status);
+    Manutencao findByidManutencao(Status status);
 }
