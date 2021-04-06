@@ -8,7 +8,9 @@ import org.springframework.amqp.core.ExchangeBuilder;
 import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter;
 import org.springframework.amqp.support.converter.MessageConverter;
 
+@Configuration
 public class MensagemConfig {
+
     @Value("${crud.rabbitmq.exchange}")
     String exchange;
 

@@ -4,10 +4,12 @@ import com.rp4.hotelaria.model.Quarto;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.stereotype.Component;
 
 @Component
-public class QuartoProducerMensagem {
+
+public class QuartoProducer {
 
     @Value("${crud.rabbitmq.exchange}")
     String exchange;
@@ -17,15 +19,14 @@ public class QuartoProducerMensagem {
 
     public RabbitTemplate rabbitTemplate;
 
-    public void producerMensagem(Quarto quarto){
-        rabbitTemplate.convertAndSend(exchange, routingkey, quarto);
-
-    }
 
     @Autowired
-    public QuartoProducerMensagem(RabbitTemplate rabbitTemplate){
-        this.rabbitTemplate = rabbitTemplate;
+    public QuartoProducer(RabbitTemplate rabbitTemplate){this.rabbitTemplate = rabbitTemplate;}
 
-    }
+    public void producerMensagem(Quarto quarto){
+        rabbitTemplate.convertAndSend(exchange, routingkey, quarto);
+        System.out.println("mensagem enviada");
+}
+
 
 }

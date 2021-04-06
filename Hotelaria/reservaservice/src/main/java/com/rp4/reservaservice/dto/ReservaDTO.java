@@ -20,7 +20,6 @@ public class ReservaDTO {
     private double valorReserva;
 
 
-
     public ReservaDTO() {
     }
 

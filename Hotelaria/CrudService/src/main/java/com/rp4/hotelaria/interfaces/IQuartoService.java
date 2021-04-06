@@ -13,7 +13,6 @@ public interface IQuartoService {
 
     public Quarto getQuartoByNumero(int numeroQuarto);
 
-    //public Quarto getQuartoByStatus(Status status);
 
     public Quarto atualizarQuarto(Quarto quarto);
 

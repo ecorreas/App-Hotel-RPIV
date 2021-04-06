@@ -20,6 +20,16 @@ spring:
     username: root
     password: admin
 
+  rabbitmq:
+    host:  localhost
+    port: 5672
+    username: guest
+    password: guest
+
+crud:
+  rabbitmq:
+    exchange: crud.exchange
+    routingkey: crud.quarto.routingkey
 eureka:
   instance:
     hostname: localhost

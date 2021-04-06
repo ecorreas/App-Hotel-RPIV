@@ -9,14 +9,16 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class QuartoConsumerMensagem {
+
     private QuartoRepository quartoRepository;
 
     @Autowired
-    public QuartoConsumerMensagem(QuartoRepository quartoRepository){
+    public QuartoConsumerMensagem(QuartoRepository quartoRepository) {
         this.quartoRepository = quartoRepository;
     }
+
     @RabbitListener(queues = {"${crud.rabbitmq.queue}"})
-    public void consumer(@Payload Quarto quarto){
+    public void consumer(@Payload Quarto quarto) {
         quartoRepository.save(quarto);
 
     }
