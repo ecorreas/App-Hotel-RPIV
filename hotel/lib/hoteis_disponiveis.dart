@@ -28,7 +28,7 @@ class _Hoteis_DisponiveisState extends State<Hoteis_Disponiveis> {
                             width: 180,
                             child: Padding(
                               padding: const EdgeInsets.all(5.0),
-                              child: Image.asset('assets/imagens/hotelreserva1.jpg'),
+                              child: Image.asset('assets/imagens/cavera.jpg'),
                             ),
                           ),
                           Padding(
@@ -39,10 +39,10 @@ class _Hoteis_DisponiveisState extends State<Hoteis_Disponiveis> {
                               mainAxisAlignment: MainAxisAlignment.start,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text('Hotel genérico.',
+                                Text('Hotel Caverá',
                                   style: TextStyle(fontSize: 20),),
                                 Container(height: 10,),
-                                Text('Endereço'),
+                                Text('Endereço: '),
                                 Text('X quartos disponiveis'),
                                 RaisedButton(
                                   child: Text('Reservar'),

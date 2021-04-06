@@ -50,6 +50,41 @@ class _Quartos_livresState extends State<Quartos_livres> {
                   ),
                 ),
               ),
+              Container( 
+                child: Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: Card(
+                    child: Container(
+                      decoration: myBoxDecoration(),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Column(
+                            children:[
+                            Text('Quarto Casal',
+                                  style: TextStyle(fontSize: 18),),
+                            Text('Cama Casal'),
+                            ],
+                          ),
+                          Column(
+                            children:[
+                              RaisedButton(
+                                child: Text('Reservar'),
+                                onPressed: (){
+                                  Navigator.of(context).pushNamed('');
+                                },
+                                color: Colors.green,
+                                textColor: Colors.white,
+                              ),
+                            ],
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
             ],
           ),
         ),
