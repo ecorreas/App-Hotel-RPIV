@@ -1,5 +1,5 @@
 server:
-  port: 8083
+  port: 8084
   servlet:
     context-path: /auth
 
@@ -16,7 +16,7 @@ spring:
   jmx:
     enabled: false
   datasource:
-    url: jdbc:mysql://localhost:3306/auth_db
+    url: jdbc:mysql://localhost:3306/auth_service
     username: root
     password: admin
 
