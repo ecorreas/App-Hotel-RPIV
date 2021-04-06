@@ -27,7 +27,7 @@ public class UserDetailsServiceImp implements UserDetailsService {
         ApplicationUsuario applicationUsuario = applicationUsuarioRepository.findByUsername(username);
         log.info("ApplicationUsuario encontrado '{}", applicationUsuario);
         if (applicationUsuario == null)
-            throw new UsernameNotFoundException(String.format("Application usuario '%s' nao encontrado"), username);
+            throw new UsernameNotFoundException(String.format("Application usuario '%s' nao encontrado", username));
             return new CustomUserDetails(applicationUsuario);
 
 
