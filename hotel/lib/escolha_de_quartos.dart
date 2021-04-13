@@ -5,6 +5,7 @@ class Quartos_livres extends StatefulWidget {
   _Quartos_livresState createState() => _Quartos_livresState();
 }
 
+
 class _Quartos_livresState extends State<Quartos_livres> {
   @override
   Widget build(BuildContext context) {
@@ -17,7 +18,7 @@ class _Quartos_livresState extends State<Quartos_livres> {
             children: [
               Container( 
                 child: Padding(
-                  padding: const EdgeInsets.all(20.0),
+                  padding: EdgeInsets.all(20.0),
                   child: Card(
                     child: Container(
                       decoration: myBoxDecoration(),
