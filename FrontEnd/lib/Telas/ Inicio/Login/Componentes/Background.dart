@@ -1,7 +1,5 @@
-import 'package:app_hotel/Assets/Icons/MyIcons.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-
+import 'package:app_hotel/app/Screens/Home/Components/icons.dart';
 class Background extends StatelessWidget {
   final Widget child;
   const Background({
@@ -11,7 +9,6 @@ class Background extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
     return Container(
       decoration: BoxDecoration(
           gradient: LinearGradient(
@@ -19,7 +16,7 @@ class Background extends StatelessWidget {
         end: Alignment.bottomLeft,
         colors: [
           Colors.blue,
-          Color(36464D),
+          Color(0xFF36464D),
         ],
       )),
       child: Center(
@@ -27,7 +24,7 @@ class Background extends StatelessWidget {
           alignment: Alignment.topCenter,
           children: [
             Positioned(
-              child: Image.asset(telaLogin),
+              child: Image.asset(tela_login),
             ),
           ],
         ),

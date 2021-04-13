@@ -1,6 +1,7 @@
-import 'package:app_hotel/app/Screens/Home/Components/MyIcons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+
+import '../../../../app/Screens/Home/Components/icons.dart';
 
 class Logo extends StatelessWidget {
   const Logo({

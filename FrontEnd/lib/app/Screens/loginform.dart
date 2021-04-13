@@ -70,82 +70,76 @@ class _LoginFormState extends State<LoginForm> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: SingleChildScrollView(
-        child: SizedBox(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              TextInputField(
-                  icon: FontAwesomeIcons.envelope,
-                  text: 'Email',
-                  inputType: TextInputType.emailAddress,
-                  inputAction: TextInputAction.next),
-              SizedBox(height: 5),
-              TextInputField(
-                  icon: FontAwesomeIcons.lock,
-                  text: 'Senha',
-                  inputType: TextInputType.name,
-                  inputAction: TextInputAction.done),
-              SizedBox(height: 10),
-              TextButton(
-                onPressed: () {},
-                style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(Colors.white),
-                ),
-                child: Text('Entrar'),
-              ),
-              SizedBox(height: 10),
-              RichText(
-                text: TextSpan(
-                    text: "Esqueci minha senha",
-                    style: TextStyle(
-                        decoration: TextDecoration.underline,
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 12),
-                    recognizer: TapGestureRecognizer()
-                      ..onTap = () async {
-                        Navigator.of(context).pushNamed('/recuperarSenha');
-                      }),
-              ),
-              SizedBox(height: 50),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        TextInputField(
+            icon: FontAwesomeIcons.envelope,
+            text: 'Email',
+            inputType: TextInputType.emailAddress,
+            inputAction: TextInputAction.next),
+        SizedBox(height: 5),
+        TextInputField(
+            icon: FontAwesomeIcons.lock,
+            text: 'Senha',
+            inputType: TextInputType.name,
+            inputAction: TextInputAction.done),
+        SizedBox(height: 10),
+        TextButton(
+          onPressed: () {
+            Navigator.of(context).pushNamed('/recuperarSenha');},
+          style: ButtonStyle(
+            backgroundColor: MaterialStateProperty.all(Colors.white),
+          ),
+          child: Text('Entrar'),
+        ),
+        SizedBox(height: 10),
+        RichText(
+          text: TextSpan(
+              text: "Esqueci minha senha",
+              style: TextStyle(
+                  decoration: TextDecoration.underline,
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 12),
+              recognizer: TapGestureRecognizer()
+                ..onTap = () async {
+                  Navigator.of(context).pushNamed('/recuperarSenha');
+                }),
+        ),
+        SizedBox(height: 50),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            RichText(
+              text: TextSpan(
                 children: [
-                  RichText(
-                    text: TextSpan(
-                      children: [
-                        TextSpan(
-                          text: "Novo por aqui? ",
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 14,
-                          ),
-                        ),
-                        TextSpan(
-                            text: "Crie sua conta",
-                            style: TextStyle(
-                                decoration: TextDecoration.underline,
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 14),
-                            recognizer: TapGestureRecognizer()
-                              ..onTap = () async {
-                                Navigator.of(context)
-                                    .pushNamed('/criarCadastro');
-                              }),
-                      ],
+                  TextSpan(
+                    text: "Novo por aqui? ",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 14,
                     ),
                   ),
+                  TextSpan(
+                      text: "Crie sua conta",
+                      style: TextStyle(
+                          decoration: TextDecoration.underline,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 14),
+                      recognizer: TapGestureRecognizer()
+                        ..onTap = () async {
+                          Navigator.of(context)
+                              .pushNamed('/criarCadastro');
+                        }),
                 ],
               ),
-            ],
-          ),
+            ),
+          ],
         ),
-      ),
-      alignment: Alignment.center,
+      ],
     );
   }
 }

@@ -1,4 +1,4 @@
-import 'package:app_hotel/Assets/Icons/MyIcons.dart';
+import 'package:app_hotel/app/Screens/Home/Components/icons.dart';
 import 'package:flutter/material.dart';
 
 class TelaLogin extends StatelessWidget {
