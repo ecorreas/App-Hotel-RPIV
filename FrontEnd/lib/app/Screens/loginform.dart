@@ -87,7 +87,7 @@ class _LoginFormState extends State<LoginForm> {
         SizedBox(height: 10),
         TextButton(
           onPressed: () {
-            Navigator.of(context).pushNamed('/recuperarSenha');},
+            Navigator.of(context).pushNamed('/reservas');},
           style: ButtonStyle(
             backgroundColor: MaterialStateProperty.all(Colors.white),
           ),
