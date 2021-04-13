@@ -1,5 +1,5 @@
-import 'package:app_hotel/app/Screens/Home/Login/Componentes/backgroundimage.dart';
-import 'package:app_hotel/app/Screens/Widgets/textinputfield.dart';
+import 'package:app_hotel/app/Screens/Home/Login/Componentes/backgroundImage.dart';
+import 'package:app_hotel/app/Screens/Widgets/textInputField.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -89,7 +89,7 @@ class RecuperarSenha extends StatelessWidget {
 }
 
 // Future<Map> fetch() async {
-//   var url = '/api/usuarios/${email}';
+//   var url = '/api/usuarios/$email';
 //   var response = await http.get(url);
 //   var json = jsonDecode(response.body);
 //   return json;

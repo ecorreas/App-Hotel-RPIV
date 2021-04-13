@@ -39,7 +39,7 @@ class TextInputField extends StatelessWidget {
           child: TextFormField(
             decoration: InputDecoration(
               prefixIcon: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
+                padding: const EdgeInsets.symmetric(horizontal: 20.0),
                 child: Icon(
                   icon,
                   size: 15,

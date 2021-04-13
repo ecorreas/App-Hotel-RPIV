@@ -1,5 +1,5 @@
 //import 'package:http/http.dart' as http;
-import 'package:app_hotel/app/Screens/Widgets/textinputfield.dart';
+import 'package:app_hotel/app/Screens/Widgets/textInputField.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -106,7 +106,7 @@ class _LoginFormState extends State<LoginForm> {
                         fontSize: 12),
                     recognizer: TapGestureRecognizer()
                       ..onTap = () async {
-                        Navigator.of(context).pushNamed('/recuperarsenha');
+                        Navigator.of(context).pushNamed('/recuperarSenha');
                       }),
               ),
               SizedBox(height: 50),
@@ -134,7 +134,7 @@ class _LoginFormState extends State<LoginForm> {
                             recognizer: TapGestureRecognizer()
                               ..onTap = () async {
                                 Navigator.of(context)
-                                    .pushNamed('/TelaCadastro');
+                                    .pushNamed('/criarCadastro');
                               }),
                       ],
                     ),
