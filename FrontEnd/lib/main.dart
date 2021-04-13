@@ -1,4 +1,5 @@
-import 'package:app_hotel/app/Screens/TelaInicial.dart';
+import 'package:app_hotel/app/Screens/Home/Login/recuperarsenha.dart';
+import 'package:app_hotel/app/Screens/homepage.dart';
 import 'package:flutter/material.dart';
 
 main() => runApp(MyApp());
@@ -11,8 +12,8 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Auth',
       initialRoute: '/',
       routes: {
-        '/': (context) => TelaInicial(),
-        //'/home': (context) => HomePage(),
+        '/': (context) => HomePage(),
+        '/recuperarsenha': (context) => RecuperarSenha(),
       },
       // Scaffold(
       //   body: TelaCadastro(),
