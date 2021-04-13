@@ -1,5 +1,6 @@
 package com.rp4.hotelaria.ServiceImplements;
 
+import com.rp4.hotelaria.ProducerMensagem.HotelProducer;
 import com.rp4.hotelaria.interfaces.IHotelService;
 import com.rp4.hotelaria.model.Hotel;
 import com.rp4.hotelaria.repository.HotelRepository;
@@ -14,10 +15,12 @@ import javax.transaction.Transactional;
 public class HotelServiceImplements implements IHotelService {
 
     private HotelRepository hotelRepository;
+    private HotelProducer hotelProducer;
 
     @Autowired
-    public HotelServiceImplements(HotelRepository hotelR) {
+    public HotelServiceImplements(HotelRepository hotelR, HotelProducer hotelProducer) {
         this.hotelRepository = hotelR;
+        this.hotelProducer = hotelProducer;
 
     }
 
@@ -25,6 +28,7 @@ public class HotelServiceImplements implements IHotelService {
     @Transactional
     public void salvarHotel(Hotel hotel) {
         hotelRepository.save(hotel);
+        hotelProducer.producerMensagem(hotel);
     }
 
     @Override
