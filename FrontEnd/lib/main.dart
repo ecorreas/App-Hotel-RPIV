@@ -1,5 +1,6 @@
-import 'package:app_hotel/app/Screens/Home/Login/recuperarsenha.dart';
-import 'package:app_hotel/app/Screens/homepage.dart';
+import 'package:app_hotel/app/Screens/Home/Login/recuperarSenha.dart';
+import 'package:app_hotel/app/Screens/homePage.dart';
+import 'package:app_hotel/criarCadastro.dart';
 import 'package:flutter/material.dart';
 
 main() => runApp(MyApp());
@@ -13,7 +14,8 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => HomePage(),
-        '/recuperarsenha': (context) => RecuperarSenha(),
+        '/recuperarSenha': (context) => RecuperarSenha(),
+        '/criarCadastro': (context) => CriarCadastro(),
       },
       // Scaffold(
       //   body: TelaCadastro(),
