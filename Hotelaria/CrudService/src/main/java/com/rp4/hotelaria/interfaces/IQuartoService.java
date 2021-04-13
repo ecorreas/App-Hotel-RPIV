@@ -12,10 +12,6 @@ public interface IQuartoService {
 
     public Quarto getQuartoById(Long id);
 
-    public Quarto getQuartoByNumero(int numeroQuarto);
-
-    //public Quarto getQuartoByStatus(Status status);
-
     public Quarto atualizarQuarto(Quarto quarto);
 
     public void excluirQuarto(Long id);

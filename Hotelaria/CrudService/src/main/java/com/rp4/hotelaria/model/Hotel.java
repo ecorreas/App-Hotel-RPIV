@@ -1,6 +1,7 @@
 package com.rp4.hotelaria.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "tbl_registro_hotel")
@@ -10,6 +11,9 @@ public class Hotel {
 	@Column(name = "id_hotel")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idHotel;
+
+	@OneToMany
+	private List<Quarto> quartos;
 
 	@Column(name = "codEndereco")
 	private String codEndereco;

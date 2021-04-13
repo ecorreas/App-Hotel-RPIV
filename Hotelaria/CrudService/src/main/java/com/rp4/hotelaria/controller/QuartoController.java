@@ -53,14 +53,10 @@ public class QuartoController {
     public void deleteQuarto(@PathVariable("id") Long id){
         quartoService.excluirQuarto(id);
     }
+
     @GetMapping("/todos")
     public List<Quarto> pegarTodosQuartos(){
         List<Quarto> quartos = quartoService.pegarTodosQuartos();
         return quartos;
-    }
-    @GetMapping("/quarto/numero/{numero}")
-    public Quarto getQuartoByNumero(int numeroDoQuarto){
-        Quarto quarto = quartoService.getQuartoByNumero(numeroDoQuarto);
-        return quarto;
     }
 }
