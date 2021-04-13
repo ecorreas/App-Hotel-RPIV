@@ -1,11 +1,7 @@
 package com.rp4.reservaservice.dto;
 
 import com.rp4.reservaservice.model.Quarto;
-import org.springframework.format.annotation.DateTimeFormat;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.OneToOne;
 import java.util.Date;
 
 public class ReservaDTO {

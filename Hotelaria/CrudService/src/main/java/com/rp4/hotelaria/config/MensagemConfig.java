@@ -13,13 +13,9 @@ public class MensagemConfig {
     @Value("${crud.rabbitmq.exchange}")
     String exchange;
 
-    @Bean
-    Queue queue(){
-        return new Queue("crud.quarto.reserva", true);
-    }
 
     @Bean
-    Exchange exchange(){
+    public Exchange exchange(){
         return ExchangeBuilder.directExchange(exchange).durable(true).build();
     }
 

@@ -29,13 +29,15 @@ public class ReservaController {
         reservaService.saveReserva(reserva);
 
     }
+
     @PutMapping("/reserva/atualizar")
-    public ResponseEntity<?> updateReserva(@RequestBody Reserva reserva){
-        Reserva atualizarReserva =  reservaService.updateReserva(reserva);
+    public ResponseEntity<?> updateReserva(@RequestBody Reserva reserva) {
+        Reserva atualizarReserva = reservaService.updateReserva(reserva);
         return new ResponseEntity<>(atualizarReserva, HttpStatus.OK);
     }
+
     @GetMapping("/reserva/{id}")
-    public ResponseEntity<?> getRentById (@PathVariable("id") Long id) {
+    public ResponseEntity<?> getRentById(@PathVariable("id") Long id) {
         Reserva reserva = reservaService.findReservaById(id);
         return new ResponseEntity<>(reserva, HttpStatus.OK);
     }

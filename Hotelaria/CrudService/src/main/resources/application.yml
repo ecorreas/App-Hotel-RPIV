@@ -29,7 +29,8 @@ spring:
 crud:
   rabbitmq:
     exchange: crud.exchange
-    routingkey: crud.quarto.routingkey
+    routingkeyQuarto: crud.quarto.routingkey
+
 eureka:
   instance:
     hostname: localhost

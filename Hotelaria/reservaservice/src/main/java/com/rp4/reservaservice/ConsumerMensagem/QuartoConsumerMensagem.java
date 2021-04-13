@@ -2,6 +2,7 @@ package com.rp4.reservaservice.ConsumerMensagem;
 
 import com.rp4.reservaservice.model.Quarto;
 import com.rp4.reservaservice.repository.QuartoRepository;
+
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.handler.annotation.Payload;
@@ -20,6 +21,7 @@ public class QuartoConsumerMensagem {
     @RabbitListener(queues = {"${crud.rabbitmq.queue}"})
     public void consumer(@Payload Quarto quarto) {
         quartoRepository.save(quarto);
+        
 
     }
 }

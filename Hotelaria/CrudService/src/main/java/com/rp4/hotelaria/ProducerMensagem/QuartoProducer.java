@@ -14,14 +14,16 @@ public class QuartoProducer {
     @Value("${crud.rabbitmq.exchange}")
     String exchange;
 
-    @Value("${crud.rabbitmq.routingkey}")
+    @Value("${crud.rabbitmq.routingkeyQuarto}")
     String routingkey;
 
     public RabbitTemplate rabbitTemplate;
 
 
     @Autowired
-    public QuartoProducer(RabbitTemplate rabbitTemplate){this.rabbitTemplate = rabbitTemplate;}
+    public QuartoProducer(RabbitTemplate rabbitTemplate){
+        this.rabbitTemplate = rabbitTemplate;
+    }
 
     public void producerMensagem(Quarto quarto){
         rabbitTemplate.convertAndSend(exchange, routingkey, quarto);
