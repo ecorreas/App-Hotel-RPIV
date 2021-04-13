@@ -8,18 +8,18 @@ import com.rp4.hotelaria.model.Usuario;
 
 public interface IUsuarioService {
 
-	public void salvarUsuario(Usuario usuario);
+    public void salvarUsuario(Usuario usuario);
 
-	public Funcionario getFuncionarioById(Long id);
+    public Funcionario getFuncionarioById(Long id);
 
-	public Cliente getClienteById(Long id);
+    public Cliente getClienteById(Long id);
 
-	public List<Usuario> pegarTodosUsuarios();
+    public List<Usuario> pegarTodosUsuarios();
 
-	public void excluirUsuario(Long id);
+    public void excluirUsuario(Long id);
 
-	public Cliente atualizarCliente(Cliente cliente);
+    public Cliente atualizarCliente(Cliente cliente);
 
-	public Funcionario atualizarFuncionario(Funcionario funcionario);
+    public Funcionario atualizarFuncionario(Funcionario funcionario);
 
 }

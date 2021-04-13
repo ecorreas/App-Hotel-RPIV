@@ -2,6 +2,7 @@ package com.rp4.hotelaria.ServiceImplements;
 
 import java.util.List;
 
+import com.rp4.hotelaria.ProducerMensagem.UsuarioProducer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -15,48 +16,51 @@ import com.rp4.hotelaria.repository.UsuarioRepository;
 @Service
 public class UsuarioServiceImplements implements IUsuarioService {
 
-	private UsuarioRepository usuarioRepository;
+    private UsuarioRepository usuarioRepository;
+    private UsuarioProducer usuarioProducer;
 
-	@Autowired
-	public UsuarioServiceImplements(UsuarioRepository usuarioR) {
-		this.usuarioRepository = usuarioR;
+    @Autowired
+    public UsuarioServiceImplements(UsuarioRepository usuarioR,UsuarioProducer usuarioProducer) {
+        this.usuarioRepository = usuarioR;
 
-	}
 
-	@Override
-	@Transactional
-	public void salvarUsuario(Usuario usuario) {
-		usuarioRepository.save(usuario);
-	}
+    }
 
-	@Override
-	public Funcionario getFuncionarioById(Long id) {
-		return usuarioRepository.findFuncionarioById(id);
-	}
+    @Override
+    @Transactional
+    public void salvarUsuario(Usuario usuario) {
+        usuarioRepository.save(usuario);
+        usuarioProducer.producerMensagem(usuario);
+    }
 
-	@Override
-	public Cliente getClienteById(Long id) {
-		return usuarioRepository.findClienteById(id);
-	}
+    @Override
+    public Funcionario getFuncionarioById(Long id) {
+        return usuarioRepository.findFuncionarioById(id);
+    }
 
-	@Override
-	public List<Usuario> pegarTodosUsuarios() {
-		return usuarioRepository.findAll();
-	}
+    @Override
+    public Cliente getClienteById(Long id) {
+        return usuarioRepository.findClienteById(id);
+    }
 
-	@Override
-	public void excluirUsuario(Long id) {
-		usuarioRepository.deleteById(id);
-	}
+    @Override
+    public List<Usuario> pegarTodosUsuarios() {
+        return usuarioRepository.findAll();
+    }
 
-	@Override
-	public Cliente atualizarCliente(Cliente cliente) {
-		return usuarioRepository.save(cliente);
-	}
+    @Override
+    public void excluirUsuario(Long id) {
+        usuarioRepository.deleteById(id);
+    }
 
-	@Override
-	public Funcionario atualizarFuncionario(Funcionario funcionario) {
-		return usuarioRepository.save(funcionario);
-	}
+    @Override
+    public Cliente atualizarCliente(Cliente cliente) {
+        return usuarioRepository.save(cliente);
+    }
+
+    @Override
+    public Funcionario atualizarFuncionario(Funcionario funcionario) {
+        return usuarioRepository.save(funcionario);
+    }
 
 }

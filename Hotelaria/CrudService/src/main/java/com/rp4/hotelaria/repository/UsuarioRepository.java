@@ -8,7 +8,7 @@ import com.rp4.hotelaria.model.Usuario;
 
 public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
 
-	Funcionario findFuncionarioById(Long id);
+    Funcionario findFuncionarioById(Long id);
 
-	Cliente findClienteById(Long id);
+    Cliente findClienteById(Long id);
 }

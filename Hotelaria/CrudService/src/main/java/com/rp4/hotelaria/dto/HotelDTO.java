@@ -11,7 +11,7 @@ public class HotelDTO {
     private String status;
     private double preco;
 
-    public HotelDTO(){
+    public HotelDTO() {
 
     }
 
