@@ -26,6 +26,18 @@ public class Reserva {
     @Column(name = "valorReserva", nullable = false)
     private double valorReserva;
 
+    public Reserva (){
+
+    }
+
+    public Reserva(long id, Date dataInicio, Date dataFinal, Quarto quarto, double valorReserva) {
+        this.id = id;
+        this.dataInicio = dataInicio;
+        this.dataFinal = dataFinal;
+        this.quarto = quarto;
+        this.valorReserva = valorReserva;
+    }
+
     public long getId() {
         return id;
     }

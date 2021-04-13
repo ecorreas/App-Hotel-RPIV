@@ -13,6 +13,8 @@ public class Quarto {
     @Column(name = "preco")
     private double preco;
 
+    public Quarto() {
+    }
 
     public double getPreco() {
         return preco;

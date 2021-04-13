@@ -31,6 +31,8 @@ crud:
   rabbitmq:
     exchange: crud.exchange
     queue: crud.reserva.quarto
+    queueUsuario: crud.reserva.usuario
+    queueHotel: crud.reserva.hotel
 
 eureka:
   instance:

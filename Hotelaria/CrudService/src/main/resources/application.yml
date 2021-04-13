@@ -30,6 +30,8 @@ crud:
   rabbitmq:
     exchange: crud.exchange
     routingkeyQuarto: crud.quarto.routingkey
+    routingkeyUsuario: crud.usuario.routingkey
+    routingkeyHotel: crud.hotel.routingkey
 
 eureka:
   instance:

@@ -18,7 +18,7 @@ public class QuartoConsumerMensagem {
         this.quartoRepository = quartoRepository;
     }
 
-    @RabbitListener(queues = {"${crud.rabbitmq.queue}"})
+    @RabbitListener(queues = "crud.reserva.quarto")
     public void consumer(@Payload Quarto quarto) {
         quartoRepository.save(quarto);
         
