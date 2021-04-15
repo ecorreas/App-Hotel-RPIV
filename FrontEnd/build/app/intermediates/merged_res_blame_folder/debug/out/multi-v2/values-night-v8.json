@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "K:\\Faculdade\\Resolucao de Problemas IV\\grupos\\App-Hotel-RPIV\\FrontEnd\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-night-v8\\values-night-v8.xml",
+            "outputFile": "C:\\Users\\henri\\OneDrive\\Documentos\\Flutter\\RPIV\\App-Hotel-RPIV\\FrontEnd\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-night-v8\\values-night-v8.xml",
             "map": [
                 {
-                    "source": "K:\\Faculdade\\Resolucao de Problemas IV\\grupos\\App-Hotel-RPIV\\FrontEnd\\android\\app\\src\\main\\res\\values-night\\styles.xml",
+                    "source": "C:\\Users\\henri\\OneDrive\\Documentos\\Flutter\\RPIV\\App-Hotel-RPIV\\FrontEnd\\android\\app\\src\\main\\res\\values-night\\styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",

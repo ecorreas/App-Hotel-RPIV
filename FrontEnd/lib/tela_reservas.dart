@@ -19,6 +19,27 @@ class DadosReserva extends State<TelaReservas> {
   @override
   Widget build(BuildContext context) {
       return Scaffold(
+        drawer: Drawer(
+          child: Column(
+            children: [
+              ListTile(
+                leading: Icon(Icons.card_travel),
+                title: Text('Minhas Reservas'),
+                subtitle: Text('confira suas reservas!'),
+                onTap: () {
+                  print('viagens');
+                },
+              ),
+              ListTile(
+                leading: Icon(Icons.logout),
+                title: Text('Sair'),
+                onTap: () {
+                  Navigator.of(context).pushReplacementNamed('/');
+                }
+              ),
+            ],
+          ),
+        ),
         appBar: AppBar(
           title: Text('Buscar Hotéis'),
         ),
