@@ -22,51 +22,51 @@ class LoginForm extends StatefulWidget {
 //   return json;
 // }
 
-class Todo {
-  int id;
-  String email;
-  String nome;
-  String cargo;
-  String cpf;
-  String telefone;
-  String senha;
+// class Todo {
+//   int id;
+//   String email;
+//   String nome;
+//   String cargo;
+//   String cpf;
+//   String telefone;
+//   String senha;
 
-  Todo(
-      {this.id,
-      this.email,
-      this.nome,
-      this.cargo,
-      this.cpf,
-      this.telefone,
-      this.senha});
+//   Todo(
+//       {this.id,
+//       this.email,
+//       this.nome,
+//       this.cargo,
+//       this.cpf,
+//       this.telefone,
+//       this.senha});
 
-  Todo.fromJson(Map<String, dynamic> json) {
-    id = json['id'];
-    email = json['email'];
-    nome = json['nome'];
-    cargo = json['cargo'];
-    cpf = json['cpf'];
-    telefone = json['telefone'];
-    senha = json['senha'];
-  }
+//   Todo.fromJson(Map<String, dynamic> json) {
+//     id = json['id'];
+//     email = json['email'];
+//     nome = json['nome'];
+//     cargo = json['cargo'];
+//     cpf = json['cpf'];
+//     telefone = json['telefone'];
+//     senha = json['senha'];
+//   }
 
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['id'] = this.id;
-    data['email'] = this.email;
-    data['nome'] = this.nome;
-    data['cargo'] = this.cargo;
-    data['cpf'] = this.cpf;
-    data['telefone'] = this.telefone;
-    data['senha'] = this.senha;
-    return data;
-  }
-}
+//   Map<String, dynamic> toJson() {
+//     final Map<String, dynamic> data = new Map<String, dynamic>();
+//     data['id'] = this.id;
+//     data['email'] = this.email;
+//     data['nome'] = this.nome;
+//     data['cargo'] = this.cargo;
+//     data['cpf'] = this.cpf;
+//     data['telefone'] = this.telefone;
+//     data['senha'] = this.senha;
+//     return data;
+//   }
+// }
 
 class _LoginFormState extends State<LoginForm> {
-  final String email = '';
+  final String email = 'ecs@gmail.com';
 
-  final String password = '';
+  final String password = '123';
 
   @override
   Widget build(BuildContext context) {
@@ -90,8 +90,8 @@ class _LoginFormState extends State<LoginForm> {
               SizedBox(height: 10),
               TextButton(
                 onPressed: () {
-                  if (email == 'ecs@gmail.com' && password == '12345678') {
-                    Navigator.of(context).pushReplacementNamed('/home');
+                  if (email == 'ecs@gmail.com' && password == '123') {
+                    Navigator.of(context).pushReplacementNamed('/reservas');
                   } else {
                     print('Login inválido');
                   }
@@ -99,7 +99,10 @@ class _LoginFormState extends State<LoginForm> {
                 style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.all(Colors.white),
                 ),
-                child: Text('Entrar'),
+                child: Text(
+                  'Entrar',
+                  textAlign: TextAlign.center,
+                ),
               ),
               SizedBox(height: 10),
               RichText(

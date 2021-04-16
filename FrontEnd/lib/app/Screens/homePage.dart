@@ -16,13 +16,15 @@ class _HomePageState extends State<HomePage> {
     return BackgroundImage(
       child: Scaffold(
         backgroundColor: Colors.transparent,
-        body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
-          child: Column(
-            children: [
-              Logo(),
-              LoginForm(),
-            ],
+        body: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Column(
+              children: [
+                Logo(),
+                LoginForm(),
+              ],
+            ),
           ),
         ),
       ),

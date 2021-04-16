@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class TextInputField extends StatelessWidget {
@@ -37,7 +38,9 @@ class TextInputField extends StatelessWidget {
         ),
         child: Center(
           child: TextFormField(
+            style: TextStyle(color: Colors.white),
             decoration: InputDecoration(
+              isDense: true,
               prefixIcon: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20.0),
                 child: Icon(
@@ -60,6 +63,7 @@ class TextInputField extends StatelessWidget {
             obscureText: isPassword(text),
             keyboardType: inputType,
             textInputAction: inputAction,
+            cursorColor: Colors.blue,
             validator: (String value) {
               if (value.isEmpty || value == null) {
                 return 'Por favor digite $text';
