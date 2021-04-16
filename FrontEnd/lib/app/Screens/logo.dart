@@ -1,7 +1,6 @@
+import 'package:app_hotel/app/Screens/Components/icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-
-import '../../../../app/Screens/Home/Components/icons.dart';
 
 class Logo extends StatelessWidget {
   const Logo({
@@ -14,7 +13,7 @@ class Logo extends StatelessWidget {
       margin: const EdgeInsets.only(top: 100),
       child: SvgPicture.asset(
         tela_login,
-        width: 100,
+        width: double.maxFinite,
         height: 100,
         fit: BoxFit.contain,
         alignment: Alignment.topCenter,

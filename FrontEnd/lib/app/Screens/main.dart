@@ -1,7 +1,7 @@
 import 'package:app_hotel/app/Screens/Home/Login/recuperarSenha.dart';
+import 'package:app_hotel/app/Screens/criarCadastro.dart';
 import 'package:app_hotel/app/Screens/homePage.dart';
-import 'package:app_hotel/criarCadastro.dart';
-import 'package:app_hotel/tela_reservas.dart';
+import 'package:app_hotel/app/Screens/tela_reservas.dart';
 import 'package:flutter/material.dart';
 
 import 'escolha_de_quartos.dart';

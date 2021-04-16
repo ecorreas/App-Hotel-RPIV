@@ -1,28 +1,16 @@
-import 'package:app_hotel/app/Screens/Home/Login/Componentes/backgroundImage.dart';
-import 'package:app_hotel/app/Screens/Widgets/textInputField.dart';
+import 'package:app_hotel/app/Screens/backgroundImage.dart';
+import 'package:app_hotel/app/Screens/textInputField.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-//import 'package:http/http.dart' as http;
 
-class RecuperarSenha extends StatelessWidget {
-  const RecuperarSenha({
-    Key key,
-    this.email,
-  }) : super(key: key);
+class CriarCadastro extends StatefulWidget {
+  CriarCadastro({Key key}) : super(key: key);
 
-  final String email;
+  @override
+  _CriarCadastroState createState() => _CriarCadastroState();
+}
 
-  // void validarEmail(String email) async {
-  //   final json = await fetch();
-  //   var userEmail = json['email'];
-  //   if (email == userEmail) {
-  //     print('Enviamos um email de redefinição de senha para ${email}');
-  //   } else {
-  //     print('Este email não consta na nossa base de dados!');
-  //   }
-  // }
-
+class _CriarCadastroState extends State<CriarCadastro> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -43,7 +31,7 @@ class RecuperarSenha extends StatelessWidget {
             ),
           ),
           title: Text(
-            'Recuperar Senha',
+            'Criar Cadastro',
             style: TextStyle(color: Colors.white),
           ),
           centerTitle: true,
@@ -59,7 +47,7 @@ class RecuperarSenha extends StatelessWidget {
                     Container(
                       width: size.width * 0.8,
                       child: Text(
-                        'Tudo bem! Insira seu endereço de email cadastrado para receber um link de redefinição de senha.',
+                        'Por favor, preencha os campos abaixo para criar sua conta.',
                         style: TextStyle(color: Colors.white),
                       ),
                     ),
@@ -67,15 +55,29 @@ class RecuperarSenha extends StatelessWidget {
                       icon: FontAwesomeIcons.envelope,
                       text: 'Email',
                       inputType: TextInputType.emailAddress,
+                      inputAction: TextInputAction.next,
+                    ),
+                    TextInputField(
+                      icon: FontAwesomeIcons.lock,
+                      text: 'Senha',
+                      inputType: TextInputType.name,
+                      inputAction: TextInputAction.next,
+                    ),
+                    TextInputField(
+                      icon: FontAwesomeIcons.lock,
+                      text: 'Confirmar Senha',
+                      inputType: TextInputType.name,
                       inputAction: TextInputAction.done,
                     ),
                     TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.of(context).pushReplacementNamed('/');
+                      },
                       style: ButtonStyle(
                         backgroundColor:
                             MaterialStateProperty.all(Colors.white),
                       ),
-                      child: Text('Recuperar Senha'),
+                      child: Text('Criar Cadastro'),
                     ),
                   ],
                 ),
@@ -87,10 +89,3 @@ class RecuperarSenha extends StatelessWidget {
     );
   }
 }
-
-// Future<Map> fetch() async {
-//   var url = '/api/usuarios/$email';
-//   var response = await http.get(url);
-//   var json = jsonDecode(response.body);
-//   return json;
-// }

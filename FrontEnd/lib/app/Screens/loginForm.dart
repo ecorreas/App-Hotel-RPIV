@@ -1,5 +1,5 @@
 //import 'package:http/http.dart' as http;
-import 'package:app_hotel/app/Screens/Widgets/textInputField.dart';
+import 'package:app_hotel/app/Screens/textInputField.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -66,7 +66,7 @@ class Todo {
 class _LoginFormState extends State<LoginForm> {
   final String email = '';
 
-  final String senha = '';
+  final String password = '';
 
   @override
   Widget build(BuildContext context) {
@@ -89,7 +89,13 @@ class _LoginFormState extends State<LoginForm> {
                   inputAction: TextInputAction.done),
               SizedBox(height: 10),
               TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  if (email == 'ecs@gmail.com' && password == '12345678') {
+                    Navigator.of(context).pushReplacementNamed('/home');
+                  } else {
+                    print('Login inválido');
+                  }
+                },
                 style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.all(Colors.white),
                 ),

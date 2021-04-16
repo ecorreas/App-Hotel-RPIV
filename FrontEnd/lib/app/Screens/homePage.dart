@@ -1,6 +1,6 @@
+import 'package:app_hotel/app/Screens/backgroundImage.dart';
 import 'package:app_hotel/app/Screens/loginForm.dart';
-import 'package:app_hotel/app/Screens/Home/Login/Componentes/backgroundImage.dart';
-import 'package:app_hotel/app/Screens/Home/Login/Componentes/logo.dart';
+import 'package:app_hotel/app/Screens/logo.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {

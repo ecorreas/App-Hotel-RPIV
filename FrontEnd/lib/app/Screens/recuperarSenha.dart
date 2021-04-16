@@ -1,5 +1,5 @@
-import 'package:app_hotel/app/Screens/Home/Login/Componentes/backgroundImage.dart';
-import 'package:app_hotel/app/Screens/Widgets/textInputField.dart';
+import 'package:app_hotel/app/Screens/backgroundImage.dart';
+import 'package:app_hotel/app/Screens/textInputField.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
