@@ -16,7 +16,7 @@ public class QuartoDTO {
 
     }
 
-    public QuartoDTO(Long idQuarto, int numeroDoQuarto,Hotel hotel, double preco, String descricao, String adicionalDoQuarto) {
+    public QuartoDTO(Long idQuarto, int numeroDoQuarto, Hotel hotel, double preco, String descricao, String adicionalDoQuarto) {
         this.idQuarto = idQuarto;
         this.numeroDoQuarto = numeroDoQuarto;
         this.hotel = hotel;

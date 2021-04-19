@@ -10,10 +10,11 @@ public class UsuarioDTO {
     private String endereco;
     private String cargo;
 
-    public UsuarioDTO(){
+    public UsuarioDTO() {
 
     }
-    public UsuarioDTO(Long id, String email, String senha,String nome, String cpf, String telefone, String endereco, String cargo){
+
+    public UsuarioDTO(Long id, String email, String senha, String nome, String cpf, String telefone, String endereco, String cargo) {
         super();
         this.id = id;
         this.email = email;

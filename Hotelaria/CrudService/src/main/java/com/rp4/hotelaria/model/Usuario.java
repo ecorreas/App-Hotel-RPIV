@@ -9,8 +9,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 
 
-
-
 @Entity
 @Table(name = "tbl_registro_usuario")
 public class Usuario {

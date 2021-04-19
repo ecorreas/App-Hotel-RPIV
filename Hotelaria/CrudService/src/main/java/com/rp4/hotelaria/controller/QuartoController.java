@@ -19,13 +19,13 @@ public class QuartoController {
     private IQuartoService quartoService;
 
     @Autowired
-    public QuartoController(IQuartoService service){
+    public QuartoController(IQuartoService service) {
 
         this.quartoService = service;
     }
 
     @PostMapping("/salvar")
-    public void saveQuarto(@RequestBody QuartoDTO quartoDTO){
+    public void saveQuarto(@RequestBody QuartoDTO quartoDTO) {
         Quarto quarto = new Quarto();
         quarto.setHotel(quartoDTO.getHotel());
         quarto.setNumeroDoQuarto(quartoDTO.getNumeroDoQuarto());
@@ -37,7 +37,7 @@ public class QuartoController {
     }
 
     @GetMapping("/quarto/{id}")
-    public ResponseEntity<?> pegarQuartoPeloId(@PathVariable("id")Long id) {
+    public ResponseEntity<?> pegarQuartoPeloId(@PathVariable("id") Long id) {
         Quarto quarto = quartoService.getQuartoById(id);
         return new ResponseEntity<>(quarto, HttpStatus.OK);
     }
@@ -50,13 +50,19 @@ public class QuartoController {
     }
 
     @DeleteMapping("/quarto/excluir/{id}")
-    public void deleteQuarto(@PathVariable("id") Long id){
+    public void deleteQuarto(@PathVariable("id") Long id) {
         quartoService.excluirQuarto(id);
     }
 
     @GetMapping("/todos")
-    public List<Quarto> pegarTodosQuartos(){
+    public ResponseEntity<?> pegarTodosQuartos() {
         List<Quarto> quartos = quartoService.pegarTodosQuartos();
-        return quartos;
+        return new ResponseEntity<>(quartos, HttpStatus.OK);
+    }
+
+    @GetMapping("/quarto/numero/{numero}")
+    public Quarto getQuartoByNumero(int numeroDoQuarto) {
+        Quarto quarto = quartoService.getQuartoByNumero(numeroDoQuarto);
+        return quarto;
     }
 }
