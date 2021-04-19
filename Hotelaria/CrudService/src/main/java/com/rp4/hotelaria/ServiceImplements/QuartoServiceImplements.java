@@ -35,10 +35,6 @@ public class QuartoServiceImplements implements IQuartoService {
         return quartoRepository.findQuartoByIdQuarto(id);
     }
 
-    @Override
-    public Quarto getQuartoByNumero(int numeroQuarto) {
-        return quartoRepository.findQuartoByNumeroDoQuarto(numeroQuarto);
-    }
 
     @Override
     public Quarto atualizarQuarto(Quarto quarto) {
