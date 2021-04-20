@@ -1,27 +1,41 @@
-package com.rp4.hotelaria.dto;
+package com.rp4.hotelaria.model;
 
-public class EstoqueDTO {
 
-    private long id;
+import javax.persistence.*;
+
+@Entity
+@Table(name = "tbl_controle_estoque")
+public class Produto {
+
+    @Id
+    @Column(name = "id_estoque")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(name = "nome")
     private String nome;
+
+    @Column(name = "quantidade")
     private int quantidade;
+
+    @Column(name = "valor")
     private double valor;
 
-    public EstoqueDTO(){
+    public Produto(){
+
     }
 
-    public EstoqueDTO(String nome, int quantidade, double valor){
-        this.id = id;
+    public Produto(String nome, int quantidade, double valor){
         this.nome = nome;
         this.quantidade = quantidade;
         this.valor = valor;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
