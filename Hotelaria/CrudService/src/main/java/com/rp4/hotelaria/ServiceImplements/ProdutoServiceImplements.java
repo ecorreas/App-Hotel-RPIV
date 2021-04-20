@@ -1,6 +1,7 @@
 package com.rp4.hotelaria.ServiceImplements;
 
 
+import com.rp4.hotelaria.ProducerMensagem.ProdutoProducer;
 import com.rp4.hotelaria.interfaces.IProduto;
 import com.rp4.hotelaria.model.Produto;
 import com.rp4.hotelaria.repository.ProdutoRepository;
@@ -15,16 +16,19 @@ import javax.transaction.Transactional;
 public class ProdutoServiceImplements implements IProduto {
 
     private ProdutoRepository produtoRepository;
+    private ProdutoProducer produtoProducer;
 
     @Autowired
-    public ProdutoServiceImplements(ProdutoRepository estoqueR){
+    public ProdutoServiceImplements(ProdutoRepository estoqueR, ProdutoProducer produtoProducer){
         this.produtoRepository = estoqueR;
+        this.produtoProducer = produtoProducer;
     }
 
     @Override
     @Transactional
     public void salvarProduto(Produto produto) {
         produtoRepository.save(produto);
+        produtoProducer.producerMensagem(produto);
     }
 
     @Override

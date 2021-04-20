@@ -8,13 +8,13 @@ public class UsuarioDTO {
     private String cpf;
     private String telefone;
     private String endereco;
-    private String cargo;
+
 
     public UsuarioDTO() {
 
     }
 
-    public UsuarioDTO(Long id, String email, String senha, String nome, String cpf, String telefone, String endereco, String cargo) {
+    public UsuarioDTO(Long id, String email, String senha, String nome, String cpf, String telefone, String endereco) {
         super();
         this.id = id;
         this.email = email;
@@ -23,7 +23,7 @@ public class UsuarioDTO {
         this.cpf = cpf;
         this.telefone = telefone;
         this.endereco = endereco;
-        this.cargo = cargo;
+
 
     }
 
@@ -83,11 +83,4 @@ public class UsuarioDTO {
         this.endereco = endereco;
     }
 
-    public String getCargo() {
-        return cargo;
-    }
-
-    public void setCargo(String cargo) {
-        this.cargo = cargo;
-    }
 }

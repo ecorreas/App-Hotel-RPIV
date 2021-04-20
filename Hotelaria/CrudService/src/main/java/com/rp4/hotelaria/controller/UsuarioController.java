@@ -45,7 +45,7 @@ public class UsuarioController {
         funcionario.setId(usuarioDTO.getId());
         funcionario.setEmail(usuarioDTO.getEmail());
         funcionario.setNome(usuarioDTO.getNome());
-        funcionario.setCargo(usuarioDTO.getCargo());
+        
         funcionario.setCpf(usuarioDTO.getCpf());
         funcionario.setTelefone(usuarioDTO.getTelefone());
         funcionario.setSenha(usuarioDTO.getSenha());

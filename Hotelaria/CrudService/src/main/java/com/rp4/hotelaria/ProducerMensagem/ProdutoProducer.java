@@ -21,6 +21,7 @@ public class ProdutoProducer {
     public ProdutoProducer(RabbitTemplate rabbitTemplate){
         this.rabbitTemplate = rabbitTemplate;
     }
+
     public void producerMensagem(Produto produto){
         rabbitTemplate.convertAndSend(exchange, routingkey, produto);
     }

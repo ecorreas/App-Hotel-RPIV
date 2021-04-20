@@ -4,11 +4,11 @@ package com.rp4.hotelaria.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "tbl_controle_estoque")
+@Table(name = "tbl_produto")
 public class Produto {
 
     @Id
-    @Column(name = "id_estoque")
+    @Column(name = "id_produto")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
