@@ -15,8 +15,6 @@ public class Usuario {
     @Column(name = "nome")
     private String nome;
 
-//    @OneToOne
-//    private List<Quarto> quartos;
 
     public Usuario(String nome){
         this.nome = nome;

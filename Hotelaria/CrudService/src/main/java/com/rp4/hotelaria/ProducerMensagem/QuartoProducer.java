@@ -27,7 +27,7 @@ public class QuartoProducer {
 
     public void producerMensagem(Quarto quarto){
         rabbitTemplate.convertAndSend(exchange, routingkey, quarto);
-        System.out.println("mensagem enviada");
+
 }
 
 

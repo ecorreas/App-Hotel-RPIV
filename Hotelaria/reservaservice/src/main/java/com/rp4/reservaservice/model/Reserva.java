@@ -10,6 +10,7 @@ public class Reserva {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_reserva")
     private long id;
 
     @DateTimeFormat(pattern = "MM/dd/yyy")

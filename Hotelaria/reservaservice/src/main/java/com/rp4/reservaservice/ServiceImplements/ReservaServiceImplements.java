@@ -32,4 +32,7 @@ public class ReservaServiceImplements implements IReservaService {
         return reservaRepository.findReservaById(id);
     }
 
+    @Override
+    public void deleteReserva(Long id) { reservaRepository.deleteById(id); }
+
 }

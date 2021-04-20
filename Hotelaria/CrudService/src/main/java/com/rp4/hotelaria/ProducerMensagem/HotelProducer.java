@@ -26,6 +26,6 @@ public class HotelProducer {
 
     public void producerMensagem(Hotel hotel){
         rabbitTemplate.convertAndSend(exchange, routingkey, hotel);
-        System.out.println("mensagem enviada");
+
     }
 }

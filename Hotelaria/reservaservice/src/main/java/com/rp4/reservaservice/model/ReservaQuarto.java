@@ -14,7 +14,7 @@ public class ReservaQuarto {
     private Long idQuarto;
 
     @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_reserva")
+    @JoinColumn(name = "id_reserva",referencedColumnName = "id_reserva", nullable = false)
     private Reserva reserva;
 
     public Long getId() {
