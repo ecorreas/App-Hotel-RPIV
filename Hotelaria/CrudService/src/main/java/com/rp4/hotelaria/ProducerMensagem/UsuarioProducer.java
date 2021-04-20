@@ -25,6 +25,6 @@ public class UsuarioProducer {
 
     public void producerMensagem(Usuario usuario){
         rabbitTemplate.convertAndSend(exchange, routingkey, usuario);
-        System.out.println("mensagem enviada");
+
     }
 }

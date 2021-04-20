@@ -1,26 +1,27 @@
 package com.rp4.reservaservice.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
 public class Hotel {
     @Id
-    private Long id;
+    @Column(name = "id_hotel")
+    private Long idHotel;
 
     public Hotel() {
     }
 
-    public Hotel(Long id) {
-        this.id = id;
+    public Hotel(Long idHotel) {
+        this.idHotel = idHotel;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public Long getIdHotel() {
+        return idHotel;
     }
 
-    @Id
-    public Long getId() {
-        return id;
+    public void setIdHotel(Long idHotel) {
+        this.idHotel = idHotel;
     }
 }

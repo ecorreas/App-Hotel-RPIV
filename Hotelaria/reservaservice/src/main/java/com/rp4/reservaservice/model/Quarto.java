@@ -1,13 +1,12 @@
 package com.rp4.reservaservice.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Quarto {
 
     @Id
+    @Column(name = "id_quarto")
     private Long idQuarto;
 
     @Column(name = "preco")

@@ -22,15 +22,15 @@ public class UsuarioServiceImplements implements IUsuarioService {
     @Autowired
     public UsuarioServiceImplements(UsuarioRepository usuarioR,UsuarioProducer usuarioProducer) {
         this.usuarioRepository = usuarioR;
-
+        this.usuarioProducer = usuarioProducer;
 
     }
 
     @Override
     @Transactional
     public void salvarUsuario(Usuario usuario) {
-        usuarioRepository.save(usuario);
-        usuarioProducer.producerMensagem(usuario);
+       Usuario usuarioSalvo = usuarioRepository.save(usuario);
+        usuarioProducer.producerMensagem(usuarioSalvo);
     }
 
     @Override

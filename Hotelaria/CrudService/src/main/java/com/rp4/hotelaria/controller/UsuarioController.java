@@ -37,6 +37,7 @@ public class UsuarioController {
         return usuarios;
     }
 
+
     @PostMapping("/funcionario/salvar")
     @ApiOperation(value = "Salva um Funcionário")
     public void salvarFuncionario(@RequestBody UsuarioDTO usuarioDTO) {
