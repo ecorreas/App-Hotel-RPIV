@@ -60,9 +60,4 @@ public class QuartoController {
         return new ResponseEntity<>(quartos, HttpStatus.OK);
     }
 
-    @GetMapping("/quarto/numero/{numero}")
-    public Quarto getQuartoByNumero(int numeroDoQuarto) {
-        Quarto quarto = quartoService.getQuartoByNumero(numeroDoQuarto);
-        return quarto;
-    }
 }
