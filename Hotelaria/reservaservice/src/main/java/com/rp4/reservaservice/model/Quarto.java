@@ -8,13 +8,10 @@ import javax.persistence.Id;
 public class Quarto {
 
     @Id
-    private Long id;
+    private Long idQuarto;
 
     @Column(name = "preco")
     private double preco;
-
-    public Quarto() {
-    }
 
     public double getPreco() {
         return preco;
@@ -24,12 +21,11 @@ public class Quarto {
         this.preco = preco;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public Long getIdQuarto() {
+        return idQuarto;
     }
 
-
-    public Long getId() {
-        return id;
+    public void setIdQuarto(Long idQuarto) {
+        this.idQuarto = idQuarto;
     }
 }
