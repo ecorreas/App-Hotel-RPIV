@@ -55,9 +55,9 @@ public class QuartoController {
     }
 
     @GetMapping("/todos")
-    public ResponseEntity<?> pegarTodosQuartos() {
+    public List<Quarto> pegarTodosQuartos() {
         List<Quarto> quartos = quartoService.pegarTodosQuartos();
-        return new ResponseEntity<>(quartos, HttpStatus.OK);
+        return quartos;
     }
 
 }

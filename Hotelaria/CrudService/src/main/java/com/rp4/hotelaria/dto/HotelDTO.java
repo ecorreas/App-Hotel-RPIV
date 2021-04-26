@@ -1,29 +1,30 @@
 package com.rp4.hotelaria.dto;
 
+import com.rp4.hotelaria.model.Quarto;
+
+import java.util.List;
+
 public class HotelDTO {
 
     private Long idHotel;
-    private Long numeroQuarto;
+    private List<Quarto> quartos;
     private String codEndereco;
     private String cidade;
     private String descricao;
     private String endereco;
-    private String status;
-    private double preco;
+
 
     public HotelDTO() {
 
     }
 
-    public HotelDTO(Long idHotel, Long numeroQuarto, String codEndereco, String cidade, String descricao, String endereco, String status, double preco) {
+    public HotelDTO(Long idHotel, List<Quarto> quartos, String codEndereco, String cidade, String descricao, String endereco) {
         this.idHotel = idHotel;
-        this.numeroQuarto = numeroQuarto;
+        this.quartos = quartos;
         this.codEndereco = codEndereco;
         this.cidade = cidade;
         this.descricao = descricao;
         this.endereco = endereco;
-        this.status = status;
-        this.preco = preco;
     }
 
     public Long getIdHotel() {
@@ -34,12 +35,12 @@ public class HotelDTO {
         this.idHotel = idHotel;
     }
 
-    public Long getNumeroQuarto() {
-        return numeroQuarto;
+    public List<Quarto> getQuartos() {
+        return quartos;
     }
 
-    public void setNumeroQuarto(Long numeroQuarto) {
-        this.numeroQuarto = numeroQuarto;
+    public void setQuartos(List<Quarto> quartos) {
+        this.quartos = quartos;
     }
 
     public String getCodEndereco() {
@@ -72,21 +73,5 @@ public class HotelDTO {
 
     public void setEndereco(String endereco) {
         this.endereco = endereco;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    public double getPreco() {
-        return preco;
-    }
-
-    public void setPreco(double preco) {
-        this.preco = preco;
     }
 }
