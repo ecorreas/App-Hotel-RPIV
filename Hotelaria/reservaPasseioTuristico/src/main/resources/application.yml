@@ -20,6 +20,21 @@ spring:
     username: root
     password: admin
 
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+crud:
+  rabbitmq:
+      exchange: crud.exchange
+      queueUsuario: crud.reservaturismo.usuario
+      queueHotel: crud.reservaturismo.hotel
+      queueTurismo: crud.reservaturismo.turismo
+      queueCidade: crud.reservaturismo.cidade
+
+
 eureka:
   instance:
     hostname: localhost
