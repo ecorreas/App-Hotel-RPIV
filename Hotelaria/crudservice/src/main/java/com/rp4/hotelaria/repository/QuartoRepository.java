@@ -7,5 +7,4 @@ public interface QuartoRepository extends JpaRepository<Quarto, Long> {
 
     Quarto findQuartoByIdQuarto(Long id);
 
-    Quarto findQuartoByNumeroDoQuarto(int numero);
 }
