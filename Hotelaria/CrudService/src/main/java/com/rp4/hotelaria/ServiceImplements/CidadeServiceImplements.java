@@ -34,7 +34,7 @@ public class CidadeServiceImplements implements ICidadeService {
 
     @Override
     public Cidade getCidadeById(Long id) {
-        return cidadeRepository.findCidadeById(id);
+        return cidadeRepository.findCidadeByIdCidade(id);
     }
 
     @Override
