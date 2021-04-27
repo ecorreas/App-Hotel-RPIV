@@ -39,4 +39,6 @@ public class ReservaController {
         return new ResponseEntity<>(reserva, HttpStatus.OK);
     }
 
+    @DeleteMapping("/reserva/excluir/{id}")
+    public void deleteReserva(@PathVariable("id")Long id){reservaService.deleteReserva(id);}
 }

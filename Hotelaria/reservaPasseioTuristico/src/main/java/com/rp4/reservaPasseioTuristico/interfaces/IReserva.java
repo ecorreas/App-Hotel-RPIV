@@ -9,6 +9,8 @@ public interface IReserva {
         public Reserva updateReserva(Reserva reserva);
 
         public Reserva findReservaById(Long id);
+
+        void deleteReserva(Long id);
 }
 
 
