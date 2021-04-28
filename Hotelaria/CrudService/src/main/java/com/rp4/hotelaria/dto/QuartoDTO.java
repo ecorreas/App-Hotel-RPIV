@@ -11,7 +11,6 @@ public class QuartoDTO {
     private String descricao;
     private String adicionalDoQuarto;
 
-    //private Status statusDoQuarto
     public QuartoDTO() {
 
     }

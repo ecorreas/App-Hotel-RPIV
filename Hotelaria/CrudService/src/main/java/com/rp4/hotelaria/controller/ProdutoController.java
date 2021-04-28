@@ -45,7 +45,8 @@ import java.util.List;
         @PutMapping("/produto/atualizar")
         @ApiOperation(value = "Atualizar Produto")
         public Produto atualizarProduto(@RequestBody Produto produto) {
-            return produtoService.atualizarProduto(produto);}
+            return produtoService.atualizarProduto(produto);
+        }
 
         @DeleteMapping("/produto/excluir/{id}")
         @ApiOperation(value = "Deletar estoque")
