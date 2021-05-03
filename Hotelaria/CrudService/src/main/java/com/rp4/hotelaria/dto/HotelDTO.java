@@ -1,11 +1,13 @@
 package com.rp4.hotelaria.dto;
 
+import com.rp4.hotelaria.model.Cidade;
+
 public class HotelDTO {
 
     private Long idHotel;
     private Long numeroQuarto;
     private String codEndereco;
-    private String cidade;
+    private Cidade cidade;
     private String descricao;
     private String endereco;
     private String status;
@@ -15,7 +17,8 @@ public class HotelDTO {
 
     }
 
-    public HotelDTO(Long idHotel, Long numeroQuarto, String codEndereco, String cidade, String descricao, String endereco, String status, double preco) {
+    public HotelDTO(Long idHotel, Long numeroQuarto, String codEndereco, String descricao,
+                    String endereco, String status, double preco, Cidade cidade) {
         this.idHotel = idHotel;
         this.numeroQuarto = numeroQuarto;
         this.codEndereco = codEndereco;
@@ -50,11 +53,11 @@ public class HotelDTO {
         this.codEndereco = codEndereco;
     }
 
-    public String getCidade() {
+    public Cidade getCidade() {
         return cidade;
     }
 
-    public void setCidade(String cidade) {
+    public void setCidade(Cidade cidade) {
         this.cidade = cidade;
     }
 

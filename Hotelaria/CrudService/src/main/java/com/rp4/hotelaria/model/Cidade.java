@@ -30,7 +30,7 @@ import java.util.List;
     private String ddd;
 
     @OneToMany
-    @JoinColumn(name = "id_hotel")
+    @JoinColumn(name = "id_cidade")
     private List<Hotel> hoteis;
 
     public Cidade(){
