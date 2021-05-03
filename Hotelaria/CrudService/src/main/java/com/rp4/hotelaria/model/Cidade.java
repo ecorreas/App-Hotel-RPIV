@@ -1,5 +1,7 @@
 package com.rp4.hotelaria.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -29,6 +31,7 @@ import java.util.List;
     @Column(name = "ddd")
     private String ddd;
 
+    @JsonIgnore
     @OneToMany
     @JoinColumn(name = "id_cidade")
     private List<Hotel> hoteis;

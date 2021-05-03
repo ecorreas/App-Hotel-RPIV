@@ -1,6 +1,8 @@
 package com.rp4.hotelaria.model;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -13,8 +15,9 @@ public class Turismo {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idTurismo;
 
+    @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_Hotel", referencedColumnName = "id_hotel", nullable = false)
+    @JoinColumn(name = "id_hotel", referencedColumnName = "id_hotel", nullable = false)
     private Hotel hotel;
 
     @Column(name = "data")
@@ -32,7 +35,6 @@ public class Turismo {
         this.data = data;
         this.hora = hora;
     }
-
     public Long getIdTurismo() {
         return idTurismo;
     }
@@ -41,6 +43,7 @@ public class Turismo {
         this.idTurismo = idTurismo;
     }
 
+
     public Hotel getHotel() {
         return hotel;
     }
@@ -48,6 +51,7 @@ public class Turismo {
     public void setHotel(Hotel hotel) {
         this.hotel = hotel;
     }
+
 
     public Date getData() {
         return data;
