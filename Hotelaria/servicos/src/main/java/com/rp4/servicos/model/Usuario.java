@@ -1,10 +1,9 @@
-package com.rp4.reservaservice.model;
-
+package com.rp4.servicos.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.OneToMany;
 import java.util.List;
 
 @Entity
@@ -15,12 +14,23 @@ public class Usuario {
     @Column(name = "nome")
     private String nome;
 
+    @OneToMany
+    private List<ReservaServico> solicitarServico;
+
     public Usuario(Long id, String nome) {
         this.id = id;
         this.nome = nome;
     }
 
     public Usuario() {
+    }
+
+    public List<ReservaServico> getSolicitarServico() {
+        return solicitarServico;
+    }
+
+    public void setSolicitarServico(List<ReservaServico> solicitarServico) {
+        this.solicitarServico = solicitarServico;
     }
 
     public Long getId() {
