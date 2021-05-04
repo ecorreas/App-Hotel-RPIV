@@ -2,7 +2,9 @@ package com.rp4.hotelaria.controller;
 
 import com.rp4.hotelaria.dto.HotelDTO;
 import com.rp4.hotelaria.interfaces.IHotelService;
+import com.rp4.hotelaria.interfaces.IQuartoService;
 import com.rp4.hotelaria.model.Hotel;
+import com.rp4.hotelaria.model.Quarto;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,9 +17,11 @@ import java.util.List;
 
 public class HotelController {
     private IHotelService hotelService;
+    private IQuartoService quartoService;
 
-    public HotelController(IHotelService service) {
+    public HotelController(IHotelService service,IQuartoService quartoService) {
         this.hotelService = service;
+        this.quartoService = quartoService;
     }
 
     @PostMapping("/salvar")
@@ -28,6 +32,12 @@ public class HotelController {
         hotel.setDescricao(hotelDTO.getDescricao());
         hotel.setEndereco(hotelDTO.getEndereco());
         hotelService.salvarHotel(hotel);
+    }
+    @PostMapping("/QuartoHotel/{id}")
+    public void quartoHotel(@PathVariable("id") Long id, Quarto quarto){
+        Hotel hotel = hotelService.getHotelById(id);
+        quarto.setHotel(hotel);
+        quartoService.salvarQuarto(quarto);
     }
 
     @GetMapping("/hotel/{id}")

@@ -13,7 +13,6 @@ public class Quarto {
 
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_Hotel", referencedColumnName = "id_hotel", nullable = false)
     private Hotel hotel;
 
     @Column(name = "numeroDoQuarto")

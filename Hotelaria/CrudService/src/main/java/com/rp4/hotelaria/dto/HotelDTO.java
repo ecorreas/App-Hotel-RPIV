@@ -1,13 +1,12 @@
 package com.rp4.hotelaria.dto;
 
-import com.rp4.hotelaria.model.Quarto;
+
 
 import java.util.List;
 
 public class HotelDTO {
 
     private Long idHotel;
-    private List<Quarto> quartos;
     private String codEndereco;
     private String cidade;
     private String descricao;
@@ -18,9 +17,8 @@ public class HotelDTO {
 
     }
 
-    public HotelDTO(Long idHotel, List<Quarto> quartos, String codEndereco, String cidade, String descricao, String endereco) {
+    public HotelDTO(Long idHotel, String codEndereco, String cidade, String descricao, String endereco) {
         this.idHotel = idHotel;
-        this.quartos = quartos;
         this.codEndereco = codEndereco;
         this.cidade = cidade;
         this.descricao = descricao;
@@ -33,14 +31,6 @@ public class HotelDTO {
 
     public void setIdHotel(Long idHotel) {
         this.idHotel = idHotel;
-    }
-
-    public List<Quarto> getQuartos() {
-        return quartos;
-    }
-
-    public void setQuartos(List<Quarto> quartos) {
-        this.quartos = quartos;
     }
 
     public String getCodEndereco() {
