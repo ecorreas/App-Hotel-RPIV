@@ -1,5 +1,7 @@
 package com.rp4.hotelaria.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 
 @Entity
@@ -11,7 +13,7 @@ public class Quarto {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idQuarto;
 
-
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     @ManyToOne(fetch = FetchType.LAZY)
     private Hotel hotel;
 
@@ -27,8 +29,7 @@ public class Quarto {
     @Column(name = "adicionalDoQuarto")
     private String adicionalDoQuarto;
 
-    //@Column(name = "statusDoQuarto")
-    //private Status statusDoQuarto;
+
 
     public Quarto() {
     }
