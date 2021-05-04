@@ -5,11 +5,18 @@ import javax.persistence.*;
 @Entity
 public class Produto {
     @Id
-    @Column(name = "id_produto")
     private Long id;
 
     @Column(name = "preco")
     private double preco;
+
+    public Produto() {
+    }
+
+    public Produto(Long id, double preco) {
+        this.id = id;
+        this.preco = preco;
+    }
 
     public Long getId() {
         return id;

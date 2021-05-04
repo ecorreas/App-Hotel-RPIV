@@ -19,16 +19,16 @@ public class ProdutoServiceImplements implements IProduto {
     private ProdutoProducer produtoProducer;
 
     @Autowired
-    public ProdutoServiceImplements(ProdutoRepository estoqueR, ProdutoProducer produtoProducer){
-        this.produtoRepository = estoqueR;
+    public ProdutoServiceImplements(ProdutoRepository produtoRepository, ProdutoProducer produtoProducer){
+        this.produtoRepository = produtoRepository;
         this.produtoProducer = produtoProducer;
     }
 
     @Override
     @Transactional
     public void salvarProduto(Produto produto) {
-        produtoRepository.save(produto);
-        produtoProducer.producerMensagem(produto);
+        Produto produtoSalvo =  produtoRepository.save(produto);
+        produtoProducer.producerMensagem(produtoSalvo);
     }
 
     @Override
