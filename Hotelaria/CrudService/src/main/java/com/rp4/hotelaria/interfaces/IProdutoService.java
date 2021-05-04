@@ -4,7 +4,7 @@ import com.rp4.hotelaria.model.Produto;
 
 import java.util.List;
 
-public interface IProduto {
+public interface IProdutoService {
 
     public void salvarProduto(Produto produto);
 

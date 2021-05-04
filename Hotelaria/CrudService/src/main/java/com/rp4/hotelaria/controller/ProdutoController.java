@@ -2,7 +2,7 @@ package com.rp4.hotelaria.controller;
 
 import com.rp4.hotelaria.dto.ProdutoDTO;
 
-import com.rp4.hotelaria.interfaces.IProduto;
+import com.rp4.hotelaria.interfaces.IProdutoService;
 import com.rp4.hotelaria.model.Produto;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,10 +17,10 @@ import java.util.List;
     @RequestMapping("/api/estoque")
 
     public class ProdutoController {
-        private IProduto produtoService;
+        private IProdutoService produtoService;
 
         @Autowired
-        public ProdutoController(IProduto produto) { this.produtoService = produto;
+        public ProdutoController(IProdutoService produto) { this.produtoService = produto;
         }
 
         @PostMapping("/salvar")
@@ -56,7 +56,7 @@ import java.util.List;
 
         @GetMapping("/todos")
         @ApiOperation(value = "Retornar uma lista de produtos")
-        public List<Produto> pegarTodosProdutose() {
+        public List<Produto> pegarTodosProdutos() {
             List<Produto> produtos = produtoService.pegarTodosProdutos();
             return produtos;
         }
