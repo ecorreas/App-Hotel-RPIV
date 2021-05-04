@@ -10,6 +10,7 @@ public class Hotel {
     @Column(name = "id_hotel")
     private Long idHotel;
 
+
     public Hotel() {
     }
 

@@ -15,6 +15,7 @@ public class ProdutoConsumerMensagem {
     public ProdutoConsumerMensagem(ProdutoRepository produtoRepository){
         this.produtoRepository = produtoRepository;
     }
+
     @RabbitListener(queues = {"${crud.rabbitmq.queueProduto}"})
     public void consumer(@Payload Produto produto){
         produtoRepository.save(produto);

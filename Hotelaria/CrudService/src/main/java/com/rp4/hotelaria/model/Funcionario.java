@@ -20,7 +20,7 @@ public class Funcionario extends Usuario {
         super(email, nome, senha);
         this.cpf = cpf;
         this.telefone = telefone;
-
+        this.cargo = cargo;
     }
 
     public String getCargo() {

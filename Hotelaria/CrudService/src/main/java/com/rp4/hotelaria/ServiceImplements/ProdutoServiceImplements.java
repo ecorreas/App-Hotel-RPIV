@@ -2,7 +2,7 @@ package com.rp4.hotelaria.ServiceImplements;
 
 
 import com.rp4.hotelaria.ProducerMensagem.ProdutoProducer;
-import com.rp4.hotelaria.interfaces.IProduto;
+import com.rp4.hotelaria.interfaces.IProdutoService;
 import com.rp4.hotelaria.model.Produto;
 import com.rp4.hotelaria.repository.ProdutoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,22 +13,22 @@ import java.util.List;
 import javax.transaction.Transactional;
 
 @Service
-public class ProdutoServiceImplements implements IProduto {
+public class ProdutoServiceImplements implements IProdutoService {
 
     private ProdutoRepository produtoRepository;
     private ProdutoProducer produtoProducer;
 
     @Autowired
-    public ProdutoServiceImplements(ProdutoRepository estoqueR, ProdutoProducer produtoProducer){
-        this.produtoRepository = estoqueR;
+    public ProdutoServiceImplements(ProdutoRepository produtoRepository, ProdutoProducer produtoProducer){
+        this.produtoRepository = produtoRepository;
         this.produtoProducer = produtoProducer;
     }
 
     @Override
     @Transactional
     public void salvarProduto(Produto produto) {
-        produtoRepository.save(produto);
-        produtoProducer.producerMensagem(produto);
+        Produto produtoSalvo =  produtoRepository.save(produto);
+        produtoProducer.producerMensagem(produtoSalvo);
     }
 
     @Override

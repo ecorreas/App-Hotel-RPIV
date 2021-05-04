@@ -10,10 +10,10 @@ import org.springframework.stereotype.Component;
 public class ProdutoProducer {
 
     @Value("${crud.rabbitmq.exchange}")
-    private String exchange;
+     String exchange;
 
     @Value("${crud.rabbitmq.routingkeyProduto}")
-    private String routingkey;
+     String routingkey;
 
     public RabbitTemplate rabbitTemplate;
 
