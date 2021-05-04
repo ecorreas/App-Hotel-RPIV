@@ -18,8 +18,7 @@ public class Servico {
     @ManyToOne
     private Hotel hotel;
 
-    @OneToOne
-    private ReservaServico solicitarServico;
+
 
     public Long getId() {
         return id;

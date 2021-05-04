@@ -24,8 +24,6 @@ public class Reserva {
     @OneToOne(cascade = CascadeType.ALL)
     private Quarto quarto;
 
-
-
     @Column(name = "valorReserva", nullable = false)
     private double valorReserva;
 
