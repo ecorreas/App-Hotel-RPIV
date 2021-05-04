@@ -15,7 +15,7 @@ public class Turismo {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idTurismo;
 
-    @JsonIgnore
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_hotel", referencedColumnName = "id_hotel", nullable = false)
     private Hotel hotel;
