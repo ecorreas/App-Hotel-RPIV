@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping(value = "/api")
-@Api(value = "API REST reservas")
+@Api(value = "API REST reservas de serviços")
 @CrossOrigin(origins = "*")
 public class ReservaController {
     private IReservaService reservaService;
@@ -24,7 +24,7 @@ public class ReservaController {
     }
 
     @PostMapping("/salvar")
-    @ApiOperation(value = "Cadastra uma reserva")
+    @ApiOperation(value = "Cadastra uma reserva de serviço")
     public void salvarReserva(@RequestBody ReservaDTO reservaDTO) {
         Reserva reserva = new Reserva();
         reserva.setId(reservaDTO.getId());
@@ -34,7 +34,7 @@ public class ReservaController {
     }
 
     @PutMapping("/reserva/atualizar")
-    @ApiOperation(value = "Atualizar uma reserva")
+    @ApiOperation(value = "Atualizar uma reserva de serviço")
     public ResponseEntity<?> updateReserva(@RequestBody Reserva reserva) {
         Reserva atualizarReserva = reservaService.updateReserva(reserva);
         return new ResponseEntity<>(atualizarReserva, HttpStatus.OK);
