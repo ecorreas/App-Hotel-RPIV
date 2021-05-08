@@ -25,10 +25,9 @@ public class HotelController {
     public void saveHotel(@RequestBody HotelDTO hotelDTO) {
         Hotel hotel = new Hotel();
         hotel.setCidade(hotelDTO.getCidade());
-        hotel.setDescricao(hotelDTO.getDescricao());
-
+        hotel.setTurismo(hotelDTO.getTurismo());
         hotel.setEndereco(hotelDTO.getEndereco());
-
+        hotel.setDescricao(hotelDTO.getDescricao());
         hotelService.salvarHotel(hotel);
     }
 
