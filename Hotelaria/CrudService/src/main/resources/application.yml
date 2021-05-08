@@ -33,6 +33,9 @@ crud:
     routingkeyUsuario: crud.usuario.routingkey
     routingkeyHotel: crud.hotel.routingkey
     routingkeyProduto: crud.produto.routingkey
+    routingkeyCidade: crud.cidade.routingkey
+    routingkeyTurismo: crud.turismo.routingkey
+
 
 eureka:
   instance:

@@ -33,6 +33,7 @@ crud:
       queueHotel: crud.reservaturismo.hotel
       queueTurismo: crud.reservaturismo.turismo
       queueCidade: crud.reservaturismo.cidade
+      queueCliente: crud.reservaturismo.cliente
 
 
 eureka:

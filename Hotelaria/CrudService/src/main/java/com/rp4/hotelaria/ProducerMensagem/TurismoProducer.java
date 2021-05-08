@@ -1,28 +1,31 @@
 package com.rp4.hotelaria.ProducerMensagem;
 
-import com.rp4.hotelaria.model.Cidade;
+import com.rp4.hotelaria.model.Hotel;
+import com.rp4.hotelaria.model.Turismo;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component
-public class CidadeProducer {
+public class TurismoProducer {
 
     @Value("${crud.rabbitmq.exchange}")
-    private String exchange;
+    String exchange;
 
-    @Value("${crud.rabbitmq.routingkeyCidade}")
-    private String routingkey;
+    @Value("${crud.rabbitmq.routingkeyTurismo}")
+    String routingkey;
 
     public RabbitTemplate rabbitTemplate;
 
+
     @Autowired
-    public CidadeProducer(RabbitTemplate rabbitTemplate){
+    public TurismoProducer(RabbitTemplate rabbitTemplate) {
         this.rabbitTemplate = rabbitTemplate;
     }
 
-    public void producerMensagem(Cidade cidade){
-        rabbitTemplate.convertAndSend(exchange, routingkey, cidade);
+    public void producerMensagem(Turismo turismo) {
+        rabbitTemplate.convertAndSend(exchange, routingkey, turismo);
+
     }
 }

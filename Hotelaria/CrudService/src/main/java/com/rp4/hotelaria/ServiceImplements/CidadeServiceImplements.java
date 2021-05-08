@@ -1,5 +1,6 @@
 package com.rp4.hotelaria.ServiceImplements;
 
+//import com.rp4.hotelaria.ProducerMensagem.CidadeProducer;
 import com.rp4.hotelaria.ProducerMensagem.CidadeProducer;
 import com.rp4.hotelaria.ProducerMensagem.ProdutoProducer;
 import com.rp4.hotelaria.interfaces.ICidadeService;
@@ -17,7 +18,7 @@ import java.util.List;
 public class CidadeServiceImplements implements ICidadeService {
 
     private CidadeRepository cidadeRepository;
-    private CidadeProducer cidadeProducer;
+    public CidadeProducer cidadeProducer;
 
     @Autowired
     public CidadeServiceImplements(CidadeRepository cidadeRepository, CidadeProducer cidadeProducer){

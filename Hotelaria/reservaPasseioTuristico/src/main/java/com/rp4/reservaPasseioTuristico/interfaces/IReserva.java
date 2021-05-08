@@ -10,7 +10,7 @@ public interface IReserva {
 
         public Reserva findReservaById(Long id);
 
-        void deleteReserva(Long id);
+       // void deleteReserva(Long id);
 }
 
 
