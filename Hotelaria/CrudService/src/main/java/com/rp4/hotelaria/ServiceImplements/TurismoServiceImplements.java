@@ -1,5 +1,6 @@
 package com.rp4.hotelaria.ServiceImplements;
 
+import com.rp4.hotelaria.ProducerMensagem.TurismoProducer;
 import com.rp4.hotelaria.interfaces.ITurismoService;
 import com.rp4.hotelaria.model.Turismo;
 import com.rp4.hotelaria.repository.TurismoRepository;
@@ -11,16 +12,20 @@ import java.util.List;
 @Service
 public class TurismoServiceImplements implements ITurismoService {
     private TurismoRepository turismoRepository;
+    private TurismoProducer turismoProducer;
+
 
     @Autowired
-    public TurismoServiceImplements(TurismoRepository turismoR){
+    public TurismoServiceImplements(TurismoRepository turismoR, TurismoProducer turismoProducer){
         this.turismoRepository = turismoR;
+        this.turismoProducer = turismoProducer;
 
     }
 
     @Override
     public void cadastrarTurismo(Turismo turismo) {
         turismoRepository.save(turismo);
+        turismoProducer.producerMensagem(turismo);
 
     }
 

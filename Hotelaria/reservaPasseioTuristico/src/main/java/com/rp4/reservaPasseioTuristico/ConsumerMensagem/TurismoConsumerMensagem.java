@@ -17,7 +17,6 @@ public class TurismoConsumerMensagem {
         this.turismoRepository = turismoRepository;
     }
 
-
     @RabbitListener(queues = {"${crud.rabbitmq.queueTurismo}"})
     public void consumer(@Payload Turismo turismo) {
         turismoRepository.save(turismo);

@@ -7,21 +7,21 @@ import javax.persistence.Id;
 public class Turismo {
 
     @Id
-    private Long id;
+    private Long idTurismo;
 
     public Turismo(){
 
     }
 
-    public Turismo(Long id){
-        this.id = id;
+    public Turismo(Long idTurismo) {
+        this.idTurismo = idTurismo;
     }
 
-    public Long getId() {
-        return id;
+    public Long getIdTurismo() {
+        return idTurismo;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setIdTurismo(Long idTurismo) {
+        this.idTurismo = idTurismo;
     }
 }
