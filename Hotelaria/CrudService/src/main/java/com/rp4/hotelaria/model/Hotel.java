@@ -1,5 +1,7 @@
 package com.rp4.hotelaria.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -18,12 +20,12 @@ public class Hotel {
     @Column(name = "codEndereco")
     private String codEndereco;
 
-    @OneToOne
-    @JoinColumn(name = "id_cidade")
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+    @OneToOne(fetch = FetchType.LAZY)
     private Cidade cidade;
 
-    @OneToOne
-    @JoinColumn(name = "id_turismo")
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+    @OneToOne(fetch = FetchType.LAZY)
     private Turismo turismo;
 
     @Column(name = "descricao")
@@ -37,8 +39,7 @@ public class Hotel {
 
     }
 
-    public Hotel(Long idHotel, String codEndereco,  String descricao, String endereco,
-                 Cidade cidade, Turismo turismo) {
+    public Hotel(Long idHotel, String codEndereco, Cidade cidade, String descricao, String endereco, Turismo turismo) {
         this.idHotel = idHotel;
         this.codEndereco = codEndereco;
         this.descricao = descricao;
@@ -55,30 +56,20 @@ public class Hotel {
         this.idHotel = idHotel;
     }
 
+    public List<Quarto> getQuartos() {
+        return quartos;
+    }
+
+    public void setQuartos(List<Quarto> quartos) {
+        this.quartos = quartos;
+    }
+
     public String getCodEndereco() {
         return codEndereco;
     }
 
     public void setCodEndereco(String codEndereco) {
         this.codEndereco = codEndereco;
-    }
-
-
-
-    public String getDescricao() {
-        return descricao;
-    }
-
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
-    }
-
-    public String getEndereco() {
-        return endereco;
-    }
-
-    public void setEndereco(String endereco) {
-        this.endereco = endereco;
     }
 
     public Cidade getCidade() {
@@ -95,5 +86,21 @@ public class Hotel {
 
     public void setTurismo(Turismo turismo) {
         this.turismo = turismo;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public String getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
     }
 }

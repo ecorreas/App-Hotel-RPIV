@@ -6,20 +6,18 @@ public class QuartoDTO {
 
     private Long idQuarto;
     private int numeroDoQuarto;
-    private Hotel hotel;
     private double preco;
     private String descricao;
     private String adicionalDoQuarto;
 
-    //private Status statusDoQuarto
     public QuartoDTO() {
 
     }
 
-    public QuartoDTO(Long idQuarto, int numeroDoQuarto, Hotel hotel, double preco, String descricao, String adicionalDoQuarto) {
+    public QuartoDTO(Long idQuarto, int numeroDoQuarto, double preco, String descricao, String adicionalDoQuarto) {
         this.idQuarto = idQuarto;
         this.numeroDoQuarto = numeroDoQuarto;
-        this.hotel = hotel;
+
         this.preco = preco;
         this.descricao = descricao;
         this.adicionalDoQuarto = adicionalDoQuarto;
@@ -39,14 +37,6 @@ public class QuartoDTO {
 
     public void setNumeroDoQuarto(int numeroDoQuarto) {
         this.numeroDoQuarto = numeroDoQuarto;
-    }
-
-    public com.rp4.hotelaria.model.Hotel getHotel() {
-        return hotel;
-    }
-
-    public void setHotel(Hotel hotel) {
-        this.hotel = hotel;
     }
 
     public double getPreco() {

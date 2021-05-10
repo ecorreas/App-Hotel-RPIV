@@ -1,7 +1,9 @@
 package com.rp4.hotelaria.controller;
 
 import com.rp4.hotelaria.dto.TurismoDTO;
+import com.rp4.hotelaria.interfaces.IHotelService;
 import com.rp4.hotelaria.interfaces.ITurismoService;
+import com.rp4.hotelaria.model.Hotel;
 import com.rp4.hotelaria.model.Turismo;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +18,7 @@ import java.util.List;
 @RequestMapping("/api/turismos")
 public class TurismoController{
     private ITurismoService turismoService;
+    private IHotelService hotelService;
 
     @Autowired
     public TurismoController(ITurismoService service){ this.turismoService = service; }
@@ -24,12 +27,18 @@ public class TurismoController{
     @ApiOperation(value = "Salvar Passeio Turistico")
     public void cadastrarTurismo(@RequestBody TurismoDTO turismoDTO){
         Turismo turismo = new Turismo();
-        turismo.setIdTurismo(turismoDTO.getIdTurismo());
         turismo.setHotel(turismoDTO.getHotel());
         turismo.setHora(turismoDTO.getHora());
         turismo.setData(turismoDTO.getData());
 
         turismoService.cadastrarTurismo(turismo);
+    }
+
+    @PostMapping("/TurismoHotel/{id}")
+    public void TurismoHotel(@PathVariable("id") Long id, Hotel hotel){
+        Turismo turismo = turismoService.getTurismoById(id);
+        hotel.setTurismo(turismo);
+        hotelService.salvarHotel(hotel);
     }
 
 

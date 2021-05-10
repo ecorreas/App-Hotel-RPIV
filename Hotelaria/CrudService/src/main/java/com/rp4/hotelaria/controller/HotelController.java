@@ -1,8 +1,14 @@
 package com.rp4.hotelaria.controller;
 
 import com.rp4.hotelaria.dto.HotelDTO;
+import com.rp4.hotelaria.interfaces.ICidadeService;
 import com.rp4.hotelaria.interfaces.IHotelService;
+import com.rp4.hotelaria.interfaces.IQuartoService;
+import com.rp4.hotelaria.interfaces.ITurismoService;
+import com.rp4.hotelaria.model.Cidade;
 import com.rp4.hotelaria.model.Hotel;
+import com.rp4.hotelaria.model.Quarto;
+import com.rp4.hotelaria.model.Turismo;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,21 +21,34 @@ import java.util.List;
 
 public class HotelController {
     private IHotelService hotelService;
+    private IQuartoService quartoService;
+    private ICidadeService cidadeService;
+    private ITurismoService turismoService;
 
-    public HotelController(IHotelService service) {
+    public HotelController(IHotelService service,IQuartoService quartoService,
+                           ICidadeService cidadeService, ITurismoService turismoService) {
         this.hotelService = service;
+        this.quartoService = quartoService;
+        this.cidadeService = cidadeService;
+        this.turismoService = turismoService;
+
     }
 
     @PostMapping("/salvar")
     @ApiOperation(value = "Salvar hotel")
     public void saveHotel(@RequestBody HotelDTO hotelDTO) {
         Hotel hotel = new Hotel();
-        hotel.setCidade(hotelDTO.getCidade());
-        hotel.setTurismo(hotelDTO.getTurismo());
-        hotel.setEndereco(hotelDTO.getEndereco());
         hotel.setDescricao(hotelDTO.getDescricao());
+        hotel.setEndereco(hotelDTO.getEndereco());
         hotelService.salvarHotel(hotel);
     }
+    @PostMapping("/QuartoHotel/{id}")
+    public void quartoHotel(@PathVariable("id") Long id, Quarto quarto){
+        Hotel hotel = hotelService.getHotelById(id);
+        quarto.setHotel(hotel);
+        quartoService.salvarQuarto(quarto);
+    }
+
 
     @GetMapping("/hotel/{id}")
     @ApiOperation(value = "Retornar hotel")

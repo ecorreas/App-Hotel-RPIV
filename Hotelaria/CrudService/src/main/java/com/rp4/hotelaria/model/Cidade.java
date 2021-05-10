@@ -1,6 +1,7 @@
 package com.rp4.hotelaria.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 import java.util.List;
@@ -31,9 +32,8 @@ import java.util.List;
     @Column(name = "ddd")
     private String ddd;
 
-    @JsonIgnore
-    @OneToMany
-    @JoinColumn(name = "id_cidade")
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+    @OneToMany(fetch = FetchType.LAZY)
     private List<Hotel> hoteis;
 
     public Cidade(){
