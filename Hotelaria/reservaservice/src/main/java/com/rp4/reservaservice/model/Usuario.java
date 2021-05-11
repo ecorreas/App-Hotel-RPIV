@@ -1,10 +1,7 @@
 package com.rp4.reservaservice.model;
 
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 import java.util.List;
 
 @Entity
@@ -15,9 +12,13 @@ public class Usuario {
     @Column(name = "nome")
     private String nome;
 
-    public Usuario(Long id, String nome) {
+    @OneToMany
+    private List<Reserva> reservas;
+
+    public Usuario(Long id, String nome, List<Reserva> reservas) {
         this.id = id;
         this.nome = nome;
+        this.reservas = reservas;
     }
 
     public Usuario() {
@@ -39,5 +40,11 @@ public class Usuario {
         this.nome = nome;
     }
 
+    public List<Reserva> getReservas() {
+        return reservas;
+    }
 
+    public void setReservas(List<Reserva> reservas) {
+        this.reservas = reservas;
+    }
 }

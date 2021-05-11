@@ -11,7 +11,9 @@ public class ReservaDTO {
 
     private Date dataFinal;
 
-    private Quarto quarto;
+    private Long idQuarto;
+    private Long idHotel;
+    private Long idUsuario;
 
     private double valorReserva;
 
@@ -19,12 +21,30 @@ public class ReservaDTO {
     public ReservaDTO() {
     }
 
-    public ReservaDTO(Long id, Date dataInicio, Date dataFinal, Quarto quarto, double valorReserva) {
+    public ReservaDTO(Long id, Date dataInicio, Date dataFinal, Long idQuarto, Long idHotel, Long idUsuario, double valorReserva) {
         this.id = id;
         this.dataInicio = dataInicio;
         this.dataFinal = dataFinal;
-        this.quarto = quarto;
+        this.idQuarto = idQuarto;
+        this.idHotel = idHotel;
+        this.idUsuario = idUsuario;
         this.valorReserva = valorReserva;
+    }
+
+    public Long getIdHotel() {
+        return idHotel;
+    }
+
+    public void setIdHotel(Long idHotel) {
+        this.idHotel = idHotel;
+    }
+
+    public Long getIdUsuario() {
+        return idUsuario;
+    }
+
+    public void setIdUsuario(Long idUsuario) {
+        this.idUsuario = idUsuario;
     }
 
     public Long getId() {
@@ -51,12 +71,12 @@ public class ReservaDTO {
         this.dataFinal = dataFinal;
     }
 
-    public Quarto getQuarto() {
-        return quarto;
+    public Long getIdQuarto() {
+        return idQuarto;
     }
 
-    public void setQuarto(Quarto quarto) {
-        this.quarto = quarto;
+    public void setIdQuarto(Long idQuarto) {
+        this.idQuarto = idQuarto;
     }
 
     public double getValorReserva() {
