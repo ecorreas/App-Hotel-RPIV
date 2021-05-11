@@ -1,0 +1,45 @@
+server:
+  port: 8083
+  servlet:
+    context-path: /reservaPasseioTuristico
+
+spring:
+  application:
+    name: reservaPasseioTuristico
+  jpa:
+    show-sql: false
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+      dialect: org.hibernate.dialect.MySQL8Dialect
+  jmx:
+    enabled: false
+  datasource:
+    url: jdbc:mysql://localhost:3306/passeioTuristico?useTimezone=true&serverTimezone=UTC
+    username: root
+    password: admin
+
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+crud:
+  rabbitmq:
+    exchange: crud.exchange
+    queueUsuario: crud.reservaturismo.usuario
+    queueHotel: crud.reservaturismo.hotel
+    queueTurismo: crud.reservaturismo.turismo
+    queueCidade: crud.reservaturismo.cidade
+    queueCliente: crud.reservaturismo.cliente
+
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/discovery/eureka
+
