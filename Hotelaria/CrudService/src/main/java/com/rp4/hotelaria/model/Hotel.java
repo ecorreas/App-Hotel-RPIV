@@ -18,8 +18,9 @@ public class Hotel {
 	@Column(name = "codEndereco")
 	private String codEndereco;
 
-    @Column(name = "cidade")
-    private String cidade;
+    @OneToOne
+    @JoinColumn(name = "id_cidade")
+    private Cidade cidade;
 
     @Column(name = "descricao")
     private String descricao;
@@ -32,7 +33,7 @@ public class Hotel {
 
     }
 
-    public Hotel(Long idHotel, String codEndereco, String cidade, String descricao, String endereco) {
+    public Hotel(Long idHotel, String codEndereco, Cidade cidade, String descricao, String endereco) {
         this.idHotel = idHotel;
         this.codEndereco = codEndereco;
         this.cidade = cidade;
@@ -56,11 +57,11 @@ public class Hotel {
         this.codEndereco = codEndereco;
     }
 
-    public String getCidade() {
+    public Cidade getCidade() {
         return cidade;
     }
 
-    public void setCidade(String cidade) {
+    public void setCidade(Cidade cidade) {
         this.cidade = cidade;
     }
 
