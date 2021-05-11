@@ -36,11 +36,12 @@ public class ConsumoController {
         Consumo consumo = new Consumo();
         Produto produto = produtoService.findProdutoById(consumoDTO.getIdProduto());
         Usuario usuario = usuarioService.findUsuarioById(consumoDTO.getIdUsuario());
+
         consumo.setId(consumoDTO.getId());
         consumo.setData(consumoDTO.getData());
         consumo.setUsuario(usuario);
         consumo.setProduto(produto);
-        consumo.setValorConsumo(consumoDTO.getValorConsumo());
+        consumo.setValorConsumo(produto.getValor());
         consumoService.saveConsumo(consumo);
     }
     @PutMapping("/consumo/atualizar")

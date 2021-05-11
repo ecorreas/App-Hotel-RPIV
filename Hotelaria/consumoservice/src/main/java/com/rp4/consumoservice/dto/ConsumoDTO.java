@@ -10,17 +10,17 @@ public class ConsumoDTO {
     private Date data;
     private Long idProduto;
     private Long idUsuario;
-    private double valorConsumo;
+
 
     public ConsumoDTO() {
     }
 
-    public ConsumoDTO(Long id, Date data, Long idProduto, Long idUsuario, double valorConsumo) {
+    public ConsumoDTO(Long id, Date data, Long idProduto, Long idUsuario) {
         this.id = id;
         this.data = data;
         this.idProduto = idProduto;
         this.idUsuario = idUsuario;
-        this.valorConsumo = valorConsumo;
+
     }
 
     public Long getId() {
@@ -55,11 +55,4 @@ public class ConsumoDTO {
         this.idUsuario = idUsuario;
     }
 
-    public double getValorConsumo() {
-        return valorConsumo;
-    }
-
-    public void setValorConsumo(double valorConsumo) {
-        this.valorConsumo = valorConsumo;
-    }
 }

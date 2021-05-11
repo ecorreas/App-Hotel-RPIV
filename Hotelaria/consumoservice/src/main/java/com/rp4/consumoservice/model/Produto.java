@@ -7,15 +7,15 @@ public class Produto {
     @Id
     private Long id;
 
-    @Column(name = "preco")
-    private double preco;
+    @Column(name = "valor")
+    private double valor;
 
     public Produto() {
     }
 
-    public Produto(Long id, double preco) {
+    public Produto(Long id, double valor) {
         this.id = id;
-        this.preco = preco;
+        this.valor = valor;
     }
 
     public Long getId() {
@@ -26,11 +26,11 @@ public class Produto {
         this.id = id;
     }
 
-    public double getPreco() {
-        return preco;
+    public double getValor() {
+        return valor;
     }
 
-    public void setPreco(double preco) {
-        this.preco = preco;
+    public void setValor(double valor) {
+        this.valor = valor;
     }
 }
