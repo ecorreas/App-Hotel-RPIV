@@ -1,11 +1,11 @@
 server:
-  port: 8081
+  port: 8083
   servlet:
-    context-path: /CrudService
+    context-path: /reservaPasseioTuristico
 
 spring:
   application:
-    name: CrudService
+    name: reservaPasseioTuristico
   jpa:
     show-sql: false
     hibernate:
@@ -16,7 +16,7 @@ spring:
   jmx:
     enabled: false
   datasource:
-    url: jdbc:mysql://localhost:3306/crud_service?useTimezone=true&serverTimezone=UTC
+    url: jdbc:mysql://localhost:3306/passeioTuristico?useTimezone=true&serverTimezone=UTC
     username: root
     password: admin
 
@@ -28,14 +28,12 @@ spring:
 
 crud:
   rabbitmq:
-    exchange: crud.exchange
-    routingkeyQuarto: crud.quarto.routingkey
-    routingkeyUsuario: crud.usuario.routingkey
-    routingkeyHotel: crud.hotel.routingkey
-    routingkeyProduto: crud.produto.routingkey
-    routingkeyServico: crud.servico.routingkey
-    routingkeyCidade: crud.cidade.routingkey
-    routingkeyTurismo: crud.turismo.routingkey
+      exchange: crud.exchange
+      queueUsuario: crud.reservaturismo.usuario
+      queueHotel: crud.reservaturismo.hotel
+      queueTurismo: crud.reservaturismo.turismo
+      queueCidade: crud.reservaturismo.cidade
+      queueCliente: crud.reservaturismo.cliente
 
 
 eureka:
@@ -44,3 +42,4 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/discovery/eureka
+
