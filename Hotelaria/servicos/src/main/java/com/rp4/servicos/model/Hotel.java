@@ -9,22 +9,11 @@ public class Hotel {
     @Column(name = "id_hotel")
     private Long idHotel;
 
-    @OneToMany
-    private List<Servico> servicos;
 
 
 
     public Hotel() {
     }
-
-    public List<Servico> getServicos() {
-        return servicos;
-    }
-
-    public void setServicos(List<Servico> servicos) {
-        this.servicos = servicos;
-    }
-
     public Hotel(Long idHotel) {
         this.idHotel = idHotel;
     }

@@ -2,9 +2,12 @@ package com.rp4.consumoservice.ServiceImplements;
 
 import com.rp4.consumoservice.interfaces.IConsumoService;
 import com.rp4.consumoservice.model.Consumo;
+import com.rp4.consumoservice.model.Usuario;
 import com.rp4.consumoservice.repository.ConsumoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class ConsumoServiceImplements implements IConsumoService {
@@ -31,7 +34,14 @@ public class ConsumoServiceImplements implements IConsumoService {
     }
 
     @Override
+    public List<Consumo> findAllConsumosByUsuario(Usuario usuario) {
+        return consumoRepository.findAllConsumoByUsuario(usuario);
+    }
+
+
+    @Override
     public void deleteConsumo(Long id) {
         consumoRepository.deleteById(id);
     }
+
 }

@@ -16,6 +16,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping(value = "/api")
 @Api(value = "API REST reservas")
@@ -58,6 +60,12 @@ public class ReservaController {
     public Reserva getReservaById(@PathVariable("id") Long id) {
         Reserva reserva = reservaService.findReservaById(id);
        return reserva;
+    }
+    @GetMapping("/usuario/encontrar/{id}")
+    public ResponseEntity<?> getReservaByUsuarioId(@PathVariable("id") Long id) {
+        Usuario usuario = usuarioService.findUsuarioById(id);
+        List<Reserva> reservas = reservaService.findAllReservaByUsuario(usuario);
+        return new ResponseEntity<>(reservas, HttpStatus.OK);
     }
 
 }

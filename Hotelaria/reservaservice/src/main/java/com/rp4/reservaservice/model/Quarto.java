@@ -12,6 +12,14 @@ public class Quarto {
     @Column(name = "preco")
     private double preco;
 
+    public Quarto() {
+    }
+
+    public Quarto(Long idQuarto, double preco) {
+        this.idQuarto = idQuarto;
+        this.preco = preco;
+    }
+
     public double getPreco() {
         return preco;
     }

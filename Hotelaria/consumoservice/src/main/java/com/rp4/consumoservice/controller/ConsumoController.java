@@ -2,12 +2,18 @@ package com.rp4.consumoservice.controller;
 
 import com.rp4.consumoservice.dto.ConsumoDTO;
 import com.rp4.consumoservice.interfaces.IConsumoService;
+import com.rp4.consumoservice.interfaces.IProdutoService;
+import com.rp4.consumoservice.interfaces.IUsuarioService;
 import com.rp4.consumoservice.model.Consumo;
+import com.rp4.consumoservice.model.Produto;
+import com.rp4.consumoservice.model.Usuario;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping(value = "/api")
@@ -15,17 +21,25 @@ import org.springframework.web.bind.annotation.*;
 @CrossOrigin(origins = "*")
 public class ConsumoController {
     private IConsumoService consumoService;
+    private IUsuarioService usuarioService;
+    private IProdutoService produtoService;
 
-    public ConsumoController(IConsumoService service){
-        this.consumoService = service;
+    public ConsumoController(IConsumoService consumoService, IUsuarioService usuarioService, IProdutoService produtoService) {
+        this.consumoService = consumoService;
+        this.usuarioService = usuarioService;
+        this.produtoService = produtoService;
     }
+
     @PostMapping("/salvar")
     @ApiOperation(value = "Cadastra um consumo")
     public void salvarConsumo(@RequestBody ConsumoDTO consumoDTO){
         Consumo consumo = new Consumo();
+        Produto produto = produtoService.findProdutoById(consumoDTO.getIdProduto());
+        Usuario usuario = usuarioService.findUsuarioById(consumoDTO.getIdUsuario());
         consumo.setId(consumoDTO.getId());
         consumo.setData(consumoDTO.getData());
-        consumo.setProduto(consumoDTO.getProduto());
+        consumo.setUsuario(usuario);
+        consumo.setProduto(produto);
         consumo.setValorConsumo(consumoDTO.getValorConsumo());
         consumoService.saveConsumo(consumo);
     }
@@ -42,4 +56,11 @@ public class ConsumoController {
     }
     @DeleteMapping("/consumo/excluir/{id}")
     public void deleteConsumo(@PathVariable("id")Long id){consumoService.deleteConsumo(id);}
+
+    @GetMapping("/usuario/encontrar/{id}")
+    public ResponseEntity<?> getConsumoByUsuarioId(@PathVariable("id") Long id) {
+        Usuario usuario = usuarioService.findUsuarioById(id);
+        List<Consumo> reservas = consumoService.findAllConsumosByUsuario(usuario);
+        return new ResponseEntity<>(reservas, HttpStatus.OK);
+    }
 }

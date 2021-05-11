@@ -20,8 +20,8 @@ public class Consumo {
     @OneToOne
     private Produto produto;
 
-    //@ManyToOne
-    //private Usuario usuario;
+    @OneToOne
+    private Usuario usuario;
 
     @Column(name = "valorConsumo", nullable = false)
     private double valorConsumo;
@@ -29,12 +29,20 @@ public class Consumo {
     public Consumo() {
     }
 
-    public Consumo(long id, Date data, Produto produto, double valorConsumo) {
+    public Consumo(long id, Date data, Produto produto, Usuario usuario, double valorConsumo) {
         this.id = id;
         this.data = data;
         this.produto = produto;
-        //this.usuario = usuario;
+        this.usuario = usuario;
         this.valorConsumo = valorConsumo;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 
     public long getId() {

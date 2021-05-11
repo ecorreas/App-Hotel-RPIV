@@ -6,7 +6,7 @@ import javax.persistence.*;
 public class Servico {
 
     @Id
-    @Column(name = "id")
+    @Column(name = "id_serviços")
     private Long id;
 
     @Column(name = "nome_serviço")
@@ -15,22 +15,19 @@ public class Servico {
     @Column(name = "valor")
     private double valor;
 
-    @ManyToOne
-    private Hotel hotel;
+    public Servico() {
+    }
 
-
+    public Servico(Long id, String servico, double valor) {
+        this.id = id;
+        this.servico = servico;
+        this.valor = valor;
+    }
 
     public Long getId() {
         return id;
     }
 
-    public Hotel getHotel() {
-        return hotel;
-    }
-
-    public void setHotel(Hotel hotel) {
-        this.hotel = hotel;
-    }
 
     public void setId(Long id) {
         this.id = id;

@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface QuartoRepository extends JpaRepository<Quarto, Long> {
-    Quarto findQuartoById(Long id);
+    Quarto findQuartoByIdQuarto(Long id);
 }

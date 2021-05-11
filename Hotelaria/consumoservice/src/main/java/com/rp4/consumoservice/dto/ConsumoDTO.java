@@ -8,16 +8,18 @@ import java.util.Date;
 public class ConsumoDTO {
     private Long id;
     private Date data;
-    private Produto produto;
+    private Long idProduto;
+    private Long idUsuario;
     private double valorConsumo;
 
     public ConsumoDTO() {
     }
 
-    public ConsumoDTO(Long id, Date data, Produto produto, double valorConsumo) {
+    public ConsumoDTO(Long id, Date data, Long idProduto, Long idUsuario, double valorConsumo) {
         this.id = id;
         this.data = data;
-        this.produto = produto;
+        this.idProduto = idProduto;
+        this.idUsuario = idUsuario;
         this.valorConsumo = valorConsumo;
     }
 
@@ -37,12 +39,20 @@ public class ConsumoDTO {
         this.data = data;
     }
 
-    public Produto getProduto() {
-        return produto;
+    public Long getIdProduto() {
+        return idProduto;
     }
 
-    public void setProduto(Produto produto) {
-        this.produto = produto;
+    public void setIdProduto(Long idProduto) {
+        this.idProduto = idProduto;
+    }
+
+    public Long getIdUsuario() {
+        return idUsuario;
+    }
+
+    public void setIdUsuario(Long idUsuario) {
+        this.idUsuario = idUsuario;
     }
 
     public double getValorConsumo() {

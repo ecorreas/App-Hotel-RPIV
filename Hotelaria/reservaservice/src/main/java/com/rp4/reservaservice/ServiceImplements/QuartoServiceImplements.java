@@ -17,6 +17,6 @@ public class QuartoServiceImplements implements IQuartoService {
 
     @Override
     public Quarto findQuartoById(Long id) {
-        return quartoRepository.findQuartoById(id);
+        return quartoRepository.findQuartoByIdQuarto(id);
     }
 }

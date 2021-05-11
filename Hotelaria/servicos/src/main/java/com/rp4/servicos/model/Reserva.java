@@ -18,8 +18,16 @@ public class Reserva {
     @Column(name = "data", nullable = false)
     private Date data;
 
-    @OneToMany
-    private List<Servico> servicos;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    private Servico servico;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    private Hotel hotel;
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    private Usuario usuario;
+
 
     @Column(name = "valorReserva", nullable = false)
     private double valorReserva;
@@ -27,11 +35,37 @@ public class Reserva {
     public Reserva() {
     }
 
-    public Reserva(Long id, Date data, List<Servico> servicos, double valorReserva) {
+    public Reserva(Long id, Date data, Servico servico, Hotel hotel, Usuario usuario, double valorReserva) {
         this.id = id;
         this.data = data;
-        this.servicos = servicos;
+        this.servico = servico;
+        this.hotel = hotel;
+        this.usuario = usuario;
         this.valorReserva = valorReserva;
+    }
+
+    public Servico getServico() {
+        return servico;
+    }
+
+    public void setServico(Servico servico) {
+        this.servico = servico;
+    }
+
+    public Hotel getHotel() {
+        return hotel;
+    }
+
+    public void setHotel(Hotel hotel) {
+        this.hotel = hotel;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 
     public Long getId() {
@@ -48,14 +82,6 @@ public class Reserva {
 
     public void setData(Date data) {
         this.data = data;
-    }
-
-    public List<Servico> getServicos() {
-        return servicos;
-    }
-
-    public void setServicos(List<Servico> servicos) {
-        this.servicos = servicos;
     }
 
     public double getValorReserva() {
